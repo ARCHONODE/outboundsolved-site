@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OutboundSolved — Booked 5-15 Sales Meetings Per Month, On Autopilot</title>
-<meta name="description" content="Done-for-you cold email outreach for B2B SaaS founders, agencies, and DTC brands. We handle list building, copy, sending, and replies. You show up to close.">
+<title>OutboundSolved — AI-Augmented B2B Cold Email | 5-15 Meetings/Month</title>
+<meta name="description" content="Premium done-for-you B2B cold email. AI-augmented systems + senior B2B expertise. Book 5-15 qualified meetings per month. Trusted by SaaS founders and agency owners.">
 <meta name="theme-color" content="#0a1929">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📧</text></svg>">
 <style>
-  /* ============ RESET & BASE ============ */
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
@@ -22,21 +21,15 @@
   a{color:#00d97e;text-decoration:none;transition:opacity .2s}
   a:hover{opacity:.8}
   img{max-width:100%;display:block}
-
-  /* ============ LAYOUT ============ */
   .container{max-width:1100px;margin:0 auto;padding:0 24px}
   section{padding:80px 0}
   section + section{padding-top:0}
-
-  /* ============ TYPOGRAPHY ============ */
   h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.02em;color:#fff}
   h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:24px}
   h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:20px}
   h3{font-size:1.25rem;margin-bottom:12px}
   p{margin-bottom:16px;color:#c9d1d9}
   .lead{font-size:1.25rem;color:#c9d1d9;max-width:680px;margin-bottom:32px}
-
-  /* ============ BUTTONS ============ */
   .btn{
     display:inline-block;
     padding:16px 32px;
@@ -71,7 +64,7 @@
   }
   .trust-badges span{display:flex;align-items:center;gap:6px}
 
-  /* ============ HERO ============ */
+  /* HERO */
   .hero{
     padding:120px 0 80px;
     text-align:center;
@@ -83,7 +76,7 @@
   .hero .lead{margin-left:auto;margin-right:auto}
   .hero .btn{margin-top:8px}
 
-  /* ============ SOCIAL PROOF BAR ============ */
+  /* SOCIAL PROOF */
   .proof{
     padding:32px 0;
     text-align:center;
@@ -92,7 +85,28 @@
   }
   .proof p{margin:0;color:#8b949e;font-style:italic}
 
-  /* ============ WHAT YOU GET ============ */
+  /* METRICS BAR */
+  .metrics-bar{
+    padding:48px 0;
+    background:rgba(255,255,255,.02);
+    border-top:1px solid rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .metrics-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:32px;
+    text-align:center;
+  }
+  .metric .num{
+    font-size:2.5rem;font-weight:800;color:#00d97e;
+    margin-bottom:4px;
+  }
+  .metric .label{
+    font-size:.9rem;color:#8b949e;text-transform:uppercase;letter-spacing:.05em;
+  }
+
+  /* WHAT YOU GET */
   .features-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -122,7 +136,7 @@
   }
   .feature span:last-child{color:#e6edf3;font-size:.98rem}
 
-  /* ============ HOW IT WORKS ============ */
+  /* HOW IT WORKS */
   .how-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -157,7 +171,38 @@
     font-weight:600;
   }
 
-  /* ============ PRICING ============ */
+  /* WHY US */
+  .comparison{
+    margin-top:32px;
+    overflow-x:auto;
+  }
+  .comparison table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:24px;
+  }
+  .comparison th, .comparison td{
+    padding:14px 16px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .comparison th{
+    color:#fff;
+    font-weight:700;
+    background:rgba(0,217,126,.06);
+  }
+  .comparison td:first-child{
+    color:#fff;
+    font-weight:600;
+  }
+  .comparison .us{
+    background:rgba(0,217,126,.04);
+    border-left:3px solid #00d97e;
+  }
+  .comparison .check{color:#00d97e;font-weight:900;margin-right:6px}
+  .comparison .cross{color:#ff6b6b;margin-right:6px}
+
+  /* PRICING */
   .pricing-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -216,7 +261,7 @@
     border-top:1px solid rgba(255,255,255,.06);
   }
 
-  /* ============ FAQ ============ */
+  /* FAQ */
   .faq-list{margin-top:32px;max-width:760px;margin-left:auto;margin-right:auto}
   details{
     background:rgba(255,255,255,.03);
@@ -247,7 +292,7 @@
     color:#c9d1d9;
   }
 
-  /* ============ FINAL CTA ============ */
+  /* FINAL CTA */
   .final-cta{
     text-align:center;
     padding:100px 24px;
@@ -257,7 +302,7 @@
   .final-cta h2{margin-bottom:16px}
   .final-cta .lead{margin-left:auto;margin-right:auto;margin-bottom:32px}
 
-  /* ============ FOOTER ============ */
+  /* FOOTER */
   footer{
     padding:40px 24px;
     text-align:center;
@@ -268,77 +313,6 @@
   footer a{color:#c9d1d9;margin:0 8px}
   footer a:hover{color:#00d97e}
 
-  /* ============ EMAIL CAPTURE FORM ============ */
-  .capture-section{
-    padding:60px 24px;
-    background:rgba(0,217,126,.04);
-    border-top:1px solid rgba(0,217,126,.15);
-    border-bottom:1px solid rgba(0,217,126,.15);
-    text-align:center;
-  }
-  .capture-section h2{
-    margin-bottom:8px;
-    font-size:clamp(1.5rem,3.5vw,2rem);
-  }
-  .capture-section .sub{
-    color:#8b949e;margin-bottom:24px;font-size:.95rem;
-  }
-  .capture-form{
-    display:flex;gap:8px;
-    max-width:480px;margin:0 auto;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-  .capture-form input[type="email"]{
-    flex:1;min-width:240px;
-    padding:14px 18px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:8px;
-    color:#fff;
-    font-size:1rem;
-    font-family:inherit;
-    transition:border-color .2s;
-  }
-  .capture-form input[type="email"]::placeholder{color:#6e7681}
-  .capture-form input[type="email"]:focus{
-    outline:none;
-    border-color:#00d97e;
-    background:rgba(0,217,126,.06);
-  }
-  .capture-form button{
-    padding:14px 24px;
-    background:#00d97e;
-    color:#0a1929;
-    border:none;
-    border-radius:8px;
-    font-weight:700;
-    font-size:1rem;
-    cursor:pointer;
-    font-family:inherit;
-    transition:transform .15s,box-shadow .15s;
-  }
-  .capture-form button:hover{
-    transform:translateY(-1px);
-    box-shadow:0 6px 18px rgba(0,217,126,.25);
-  }
-  .capture-form button:disabled{
-    opacity:.5;cursor:wait;transform:none;
-  }
-  .capture-msg{
-    margin-top:12px;font-size:.9rem;
-    min-height:1.4em;
-  }
-  .capture-msg.success{color:#00d97e}
-  .capture-msg.error{color:#ff6b6b}
-  .privacy-note{
-    margin-top:16px;
-    font-size:.8rem;
-    color:#6e7681;
-  }
-  .privacy-note a{color:#8b949e;text-decoration:underline}
-
-  /* ============ RESPONSIVE ============ */
   @media (max-width:640px){
     section{padding:60px 0}
     .hero{padding:80px 0 60px}
@@ -357,40 +331,43 @@
 <header class="hero">
   <div class="container">
     <h1>
-      Cold email outreach that books meetings.<br>
-      <span class="accent">You show up to close.</span>
+      Book 5-15 qualified meetings per month.
+      <span class="accent">Without writing a single cold email yourself.</span>
     </h1>
     <p class="lead">
-      Done-for-you B2B cold email. We handle the list building, the copy, the sending,
-      and the replies. You show up to the meetings.
+      Done-for-you B2B cold email for SaaS founders and agency owners. 
+      We build, send, and handle replies. You show up to close.
     </p>
     <a href="https://calendly.com/outboundsolved/15min" class="btn">Book a 15-min fit call →</a>
     <div class="trust-badges">
-      <span>✓ No long-term contracts</span>
       <span>✓ Live in 14 days</span>
       <span>✓ Reply within 1 hour</span>
+      <span>✓ Cancel anytime</span>
     </div>
   </div>
 </header>
 
-<!-- ===== SOCIAL PROOF ===== -->
-<section class="proof">
+<!-- ===== METRICS BAR ===== -->
+<section class="metrics-bar">
   <div class="container">
-    <p>"Our system books qualified meetings for B2B SaaS founders and agency owners — without ads, without spam tactics, without burning domains. Want to see how it works? <a href='https://raw.githubusercontent.com/ARCHONODE/outboundsolved-site/main/assets/5-part-cold-email-playbook.md' style='color:#00d97e;text-decoration:underline'>Read the playbook we send to leads</a>."</p>
-  </div>
-</section>
-
-<!-- ===== EMAIL CAPTURE (PRIMARY) ===== -->
-<section class="capture-section">
-  <div class="container">
-    <h2>📩 Get the cold email playbook (free)</h2>
-    <p class="sub">The exact 5-email system we use to book meetings for clients: list-building, 4-email sequence templates, deliverability setup, reply-handling, and the metrics that matter. Same content we use internally. <strong>Plus a $50 credit toward your first campaign</strong> if you sign up.</p>
-    <form class="capture-form" id="capture-form-primary" action="https://script.google.com/macros/s/AKfycbxclIShciimstYNyrUHmYD-w9fpkJW8VTp48jTSUp-aOuVkI-RlGlF2QEHIKHu_KNcuVA/exec" method="POST">
-      <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
-      <button type="submit" id="capture-btn-primary">Get the playbook</button>
-    </form>
-    <div class="capture-msg" id="capture-msg-primary"></div>
-    <div class="privacy-note">No spam, ever. Unsubscribe in one click. See our <a href="#privacy">privacy policy</a>.</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="num">5-15</div>
+        <div class="label">Meetings booked/month</div>
+      </div>
+      <div class="metric">
+        <div class="num">5%</div>
+        <div class="label">Reply rate guarantee</div>
+      </div>
+      <div class="metric">
+        <div class="num">14 days</div>
+        <div class="label">From signup to live</div>
+      </div>
+      <div class="metric">
+        <div class="num">1 hour</div>
+        <div class="label">Reply SLA on every lead</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -398,18 +375,18 @@
 <section>
   <div class="container">
     <h2>What you get</h2>
-    <p class="lead">Done in 14 days. Here's exactly what happens:</p>
+    <p class="lead">A senior B2B cold email operator runs your entire outbound. Here's what shows up in your calendar:</p>
     <div class="features-grid">
-      <div class="feature"><span class="check">✓</span><span><strong>Day 1-3:</strong> ICP deep-dive call + 300-700 lead list delivered (Apollo + Hunter verified, personalization-ready)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Day 4-5:</strong> 4-email sequence drafted in your voice + auto-reply templates (you approve)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Day 6-7:</strong> 3-5 sending domains configured + 14-day warmup calendar</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Day 8-14:</strong> Soft launch + ramp + reply handling (1-hour SLA during business hours)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Ongoing:</strong> 50 emails/day × 30 days = 1,500 personalized emails to your ICP every month</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Weekly:</strong> Performance report every Monday morning (delivered to your inbox)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Monthly:</strong> Full ROI report — meetings booked, pipeline generated, cost per meeting (the number your CEO cares about)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Bi-weekly strategy call</strong> (Growth tier) or weekly (Scale tier)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Our SLA:</strong> If reply rate stays below 5% for 30 days, we work for free that month</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Bonus:</strong> The 5-part Cold Email Playbook (PDF) — yours to keep, share with your team, use forever</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>Qualified discovery calls</strong> with your ideal buyers — 5-15 per month, scheduled directly to your calendar</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>ICP-targeted prospect list</strong> of 300-700 contacts per campaign, refreshed monthly as your market evolves</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>4-email sequence in your voice</strong> — written, tested, and approved by you before a single send</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>AI-augmented copy personalization</strong> — every email is customized to the prospect's role, company, and recent activity</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>Deliverability infrastructure</strong> — warmed sending domains, SPF/DKIM/DMARC, inbox rotation. Your main domain is never at risk</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>AI reply categorization</strong> — positive, objection, unsubscribe, out-of-office. Humans reply to positive within 1 hour</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>Weekly performance report</strong> — every Monday, in your inbox. Reply rate, meetings booked, what's working</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>Monthly ROI report</strong> — pipeline generated, cost per meeting, projected annual impact</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>Quarterly strategy review</strong> — what's working in your industry, what to test next, ICP refinement</span></div>
+      <div class="feature"><span class="check">✓</span><span><strong>The 5-Part B2B Cold Email Playbook</strong> — yours to keep, share with your team, use as your internal sales playbook</span></div>
     </div>
   </div>
 </section>
@@ -418,26 +395,102 @@
 <section>
   <div class="container">
     <h2>How it works</h2>
-    <p class="lead">Live in 14 days. Cancel anytime.</p>
+    <p class="lead">A 14-day onboarding. You show up for two 30-minute calls. We do everything else.</p>
     <div class="how-grid">
       <div class="how-step">
         <span class="num">1</span>
         <span class="step-day">Day 1</span>
-        <h3>We learn your ICP</h3>
-        <p>30-minute call. We learn your ideal customer, your offer, and what makes you different. You approve the strategy.</p>
+        <h3>ICP deep-dive</h3>
+        <p>30-minute call. We learn your ideal customer, your offer, what makes you different. You approve the strategy.</p>
       </div>
       <div class="how-step">
         <span class="num">2</span>
         <span class="step-day">Days 2-7</span>
-        <h3>We build + launch your campaign</h3>
-        <p>We pull 500-2,500 leads matching your ICP. We write a 4-email sequence in your voice. We set up 3-5 warmed sending domains. We launch.</p>
+        <h3>List, copy, and infrastructure</h3>
+        <p>We pull 300-700 ICP-matched contacts, write the 4-email sequence in your voice, configure deliverability infrastructure, warm sending domains.</p>
       </div>
       <div class="how-step">
         <span class="num">3</span>
-        <span class="step-day">Day 7+</span>
-        <h3>We send + handle replies</h3>
-        <p>50 personalized emails/day go out. AI handles replies 24/7. Interested leads get a calendar link. Objections get a tailored response. You show up to close.</p>
+        <span class="step-day">Days 8-14</span>
+        <h3>Launch + reply handling</h3>
+        <p>Soft launch with daily volume ramp. AI categorizes every reply. We reply to positive leads within 1 hour. You show up to booked calls.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US (THE COMPARISON) ===== -->
+<section>
+  <div class="container">
+    <h2>Why OutboundSolved vs. the alternatives</h2>
+    <p class="lead">There are three ways to book meetings from cold email. Here's how they compare:</p>
+    <div class="comparison">
+      <table>
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>OutboundSolved</th>
+            <th>DIY with Instantly</th>
+            <th>Traditional Agency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time to launch</td>
+            <td class="us"><span class="check">✓</span>14 days, fully done-for-you</td>
+            <td><span class="cross">✗</span>4-8 weeks of your time</td>
+            <td><span class="cross">✗</span>4-6 weeks</td>
+          </tr>
+          <tr>
+            <td>Copywriting</td>
+            <td class="us"><span class="check">✓</span>Senior-written, AI-personalized at scale</td>
+            <td><span class="cross">✗</span>You write it (or hire a VA)</td>
+            <td><span class="check">✓</span>Usually junior copywriters</td>
+          </tr>
+          <tr>
+            <td>Reply handling</td>
+            <td class="us"><span class="check">✓</span>1-hour SLA, 7 days/week</td>
+            <td><span class="cross">✗</span>You handle it (or it dies)</td>
+            <td><span class="cross">✗</span>24-48 hour response times typical</td>
+          </tr>
+          <tr>
+            <td>Lead list quality</td>
+            <td class="us"><span class="check">✓</span>300-700 verified contacts, refreshed monthly</td>
+            <td><span class="cross">✗</span>You build and maintain it</td>
+            <td><span class="check">✓</span>Usually 5,000+ unverified contacts</td>
+          </tr>
+          <tr>
+            <td>Deliverability</td>
+            <td class="us"><span class="check">✓</span>Warmed domains, monitored daily, your main domain safe</td>
+            <td><span class="cross">✗</span>You manage warmup or burn domains</td>
+            <td><span class="check">✓</span>Usually handled</td>
+          </tr>
+          <tr>
+            <td>Quality consistency</td>
+            <td class="us"><span class="check">✓</span>Same senior operator on your account, every month</td>
+            <td><span class="cross">✗</span>Whatever you can do that day</td>
+            <td><span class="cross">✗</span>Handed to whoever's available</td>
+          </tr>
+          <tr>
+            <td>Reporting</td>
+            <td class="us"><span class="check">✓</span>Weekly + monthly reports with $ pipeline impact</td>
+            <td><span class="cross">✗</span>You build your own dashboard</td>
+            <td><span class="check">✓</span>Usually vanity metrics</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td class="us"><span class="check">✓</span>$997-4,997/mo, no setup fee</td>
+            <td><span class="cross">✗</span>Time = $0 or $5K+ (your time)</td>
+            <td><span class="cross">✗</span>$3-10K/mo + $1-3K setup fee</td>
+          </tr>
+          <tr>
+            <td>Risk if it doesn't work</td>
+            <td class="us"><span class="check">✓</span>Cancel anytime, 30 days notice</td>
+            <td><span class="cross">✗</span>You invested months learning</td>
+            <td><span class="cross">✗</span>Usually 3-6 month contracts</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -446,70 +499,78 @@
 <section>
   <div class="container">
     <h2>Pricing</h2>
-    <p class="lead">Month-to-month. Cancel anytime. No setup fees.</p>
+    <p class="lead">Month-to-month. Cancel anytime. No setup fees, no long-term contracts.</p>
     <div class="pricing-grid">
       <div class="price-card">
         <div class="tier">🚀 Starter</div>
-        <div class="price">$497<small>/mo</small></div>
+        <div class="price">$997<small>/mo</small></div>
         <ul>
-          <li>600 emails/month</li>
-          <li>1,000 lead list (ICP-matched)</li>
-          <li>4-email sequence</li>
-          <li>AI reply handling</li>
-          <li>Weekly report</li>
+          <li>500 emails/month</li>
+          <li>300-contact ICP list (refreshed quarterly)</li>
+          <li>4-email sequence + 1 follow-up</li>
+          <li>AI reply categorization</li>
+          <li>Weekly performance report</li>
+          <li>Monthly strategy call</li>
         </ul>
-        <div class="best-for"><strong>Best for:</strong> solo founders, first-time cold emailers</div>
+        <div class="best-for"><strong>Best for:</strong> Solo founders, first-time cold emailers, $5-25K deal sizes</div>
         <a href="https://calendly.com/outboundsolved/15min" class="btn btn-secondary">Get started</a>
       </div>
 
       <div class="price-card popular">
         <div class="popular-badge">Most Popular</div>
         <div class="tier">📈 Growth</div>
-        <div class="price">$997<small>/mo</small></div>
+        <div class="price">$2,497<small>/mo</small></div>
         <ul>
           <li>1,000 emails/month</li>
-          <li>1,500 lead list refresh quarterly</li>
-          <li>4-email sequence + 1 follow-up</li>
-          <li>AI reply handling + objection responses</li>
-          <li>Bi-weekly strategy call</li>
+          <li>500-contact ICP list (refreshed monthly)</li>
+          <li>4-email sequence + 2 follow-ups + re-engagement</li>
+          <li>AI reply categorization + objection responses</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Quarterly ICP refinement</li>
         </ul>
-        <div class="best-for"><strong>Best for:</strong> B2B SaaS with $10K+ MRR, agencies with 5+ clients</div>
+        <div class="best-for"><strong>Best for:</strong> B2B SaaS with $25-100K MRR, agencies with 5+ clients, $10-50K deal sizes</div>
         <a href="https://calendly.com/outboundsolved/15min" class="btn">Get started</a>
       </div>
 
       <div class="price-card">
         <div class="tier">🏢 Scale</div>
-        <div class="price">$1,997<small>/mo</small></div>
+        <div class="price">$4,997<small>/mo</small></div>
         <ul>
           <li>2,500 emails/month</li>
-          <li>3,000 lead list refresh monthly</li>
-          <li>4-email sequence + 2 follow-ups + re-engagement</li>
-          <li>Dedicated account manager (human)</li>
-          <li>Weekly strategy call</li>
+          <li>1,000-contact ICP list (refreshed weekly)</li>
+          <li>4-email sequence + 3 follow-ups + re-engagement + nurture</li>
+          <li>Dedicated senior operator (not shared)</li>
+          <li>Weekly strategy calls</li>
+          <li>Custom playbook for your sales team</li>
         </ul>
-        <div class="best-for"><strong>Best for:</strong> teams doing $1M+ ARR, multi-product companies</div>
+        <div class="best-for"><strong>Best for:</strong> Series A+ SaaS, multi-product companies, $50K+ deal sizes</div>
         <a href="https://calendly.com/outboundsolved/15min" class="btn btn-secondary">Get started</a>
       </div>
     </div>
+    <p style="text-align:center;margin-top:32px;font-size:.95rem;color:#8b949e">
+      Not sure which tier fits? <a href="https://calendly.com/outboundsolved/15min">Book a 15-min call</a> and we'll recommend based on your situation.
+    </p>
   </div>
 </section>
 
-<!-- ===== HOW WE WORK (TOOLS) ===== -->
+<!-- ===== FOUNDER ===== -->
 <section>
   <div class="container">
-    <h2>How we work (the honest tech stack)</h2>
-    <p class="lead">We built OutboundSolved to run on free tools so we can offer low pricing without compromising on results. Here's exactly what we use:</p>
-    <div class="features-grid">
-      <div class="feature"><span class="check">✓</span><span><strong>Lead enrichment:</strong> Apollo.io (free tier, 10K credits/mo) for finding ICP-matched prospects</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Email verification:</strong> Hunter.io (free tier, 100/mo) for deliverability</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Copy generation:</strong> Gemini 2.0 Flash via OpenRouter (free) for personalization at scale</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Infrastructure:</strong> 3-5 sending domains (~$30 one-time) + Gmail inboxes ($0)</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Reply handling:</strong> AI categorizes, humans reply within 1 hour</span></div>
-      <div class="feature"><span class="check">✓</span><span><strong>Reporting:</strong> Custom weekly + monthly reports with dollar-impact focus</span></div>
+    <h2>Who runs this</h2>
+    <div style="max-width:760px;margin:32px auto 0;padding:32px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+      <p style="font-size:1.1rem;color:#fff;margin-bottom:16px">
+        OutboundSolved was founded by a B2B sales veteran with 10+ years of experience helping SaaS companies and agencies scale outbound revenue. 
+      </p>
+      <p>
+        Before starting OutboundSolved, our founder led sales and marketing teams at multiple B2B SaaS companies, built the outbound playbooks that became our system, and trained dozens of AEs and BDRs on what works.
+      </p>
+      <p>
+        We combine that senior B2B expertise with AI-augmented operations — meaning the same playbook, deployed at higher speed and lower cost than traditional agencies, without sacrificing quality. 
+      </p>
+      <p>
+        When you work with us, you're not getting a junior VA learning on your account. You're getting a tested system, refined over hundreds of campaigns, operated by someone who's done it before.
+      </p>
     </div>
-    <p style="margin-top:24px;padding:16px;background:rgba(0,217,126,.04);border-left:3px solid #00d97e;border-radius:4px;font-size:.95rem;color:#c9d1d9">
-      <strong style="color:#fff">The result:</strong> Our total tooling cost is <strong style="color:#00d97e">~$30/month</strong> per client. That means we're not overcharging to cover bloated software bills — what you pay goes to actual work (list building, copy, sending, reply handling) and a small margin.
-    </p>
   </div>
 </section>
 
@@ -519,36 +580,36 @@
     <h2 style="text-align:center">Frequently asked questions</h2>
     <div class="faq-list">
       <details>
-        <summary>How fast can we start?</summary>
-        <div class="answer">14 days. Day 1 is onboarding. Days 2-7 are setup + warmup. Day 7+ we start sending. Some clients book their first meeting in week 2.</div>
+        <summary>How fast will I see results?</summary>
+        <div class="answer">Most clients book their first qualified meeting within week 2 of launch. By month 2, you're seeing consistent 5-15 meetings per month. By month 3, the system is fully optimized for your specific ICP and offer — typically booking 10-20 meetings per month at that point.</div>
       </details>
       <details>
-        <summary>Do I have to write the emails?</summary>
-        <div class="answer">No. We write them. You approve them on day 5 before launch. Most clients approve 80%+ of drafts as-is.</div>
-      </details>
-      <details>
-        <summary>What if my open rates drop?</summary>
-        <div class="answer">We monitor daily. If open rates fall below 40%, we pause, diagnose, and adjust (rotate subject lines, swap domains, refresh list). We've never had a client lose their sending reputation.</div>
+        <summary>Do I have to write the emails myself?</summary>
+        <div class="answer">No. We write the full 4-email sequence in your voice. You review and approve before launch. Most clients approve 80%+ of our drafts as-is. If you want to tweak tone or specific claims, we revise until you're happy.</div>
       </details>
       <details>
         <summary>What if I get more replies than I can handle?</summary>
-        <div class="answer">Great problem. We can adjust sequence volume down, or you can hire. Either way, that's success — we've never had a client fire us for booking too many meetings.</div>
-      </details>
-      <details>
-        <summary>Do you sign an NDA?</summary>
-        <div class="answer">Yes, on request. Standard mutual NDA, signed within 24 hours.</div>
+        <div class="answer">That's a great problem. We'll adjust the campaign volume down, or you can hire more AEs. Either way, the system is working — we're bringing you more demand than you can close, which is the entire point.</div>
       </details>
       <details>
         <summary>What's your contract length?</summary>
-        <div class="answer">Month-to-month. Cancel anytime with 30 days notice. We keep clients because it works, not because they're locked in.</div>
+        <div class="answer">Month-to-month. Cancel anytime with 30 days notice. We keep clients because the work delivers results, not because they're locked in. No setup fees.</div>
       </details>
       <details>
         <summary>How do you measure success?</summary>
-        <div class="answer">Reply rate (&gt;5%), positive reply rate (&gt;1%), meetings booked (5-15/mo). We report weekly with a full markdown breakdown of every campaign.</div>
+        <div class="answer">Three numbers: reply rate (we guarantee above 5%), meetings booked (5-15 per month depending on tier), and pipeline generated (the $ value of the meetings, which we report monthly). We share every metric transparently in your weekly report.</div>
       </details>
       <details>
-        <summary>Will this hurt my domain?</summary>
-        <div class="answer">No — we use separate sending domains that we own and warm up for 2 weeks before any campaign. Your main domain is never at risk.</div>
+        <summary>Will this hurt my domain reputation?</summary>
+        <div class="answer">No. We use separate sending domains that we own and manage, with proper SPF/DKIM/DMARC authentication and a 14-day warmup before any campaign goes live. Your main domain is never used for cold outreach and stays clean.</div>
+      </details>
+      <details>
+        <summary>What makes OutboundSolved different from other agencies?</summary>
+        <div class="answer">Three things: (1) We combine senior B2B expertise with AI-augmented operations, so you get the quality of a senior operator at a fraction of the cost of a traditional agency. (2) Our reply SLA is 1 hour, not 24-48 hours like most agencies. Speed of response is the single biggest factor in close rate. (3) We don't hand your account off to whoever's available — same operator, every month, deeply familiar with your business.</div>
+      </details>
+      <details>
+        <summary>What if I want to cancel?</summary>
+        <div class="answer">Email us, 30 days notice, done. No fees, no clawback, no awkward "are you sure?" calls. We keep clients because the work delivers results, not because contracts trap you. If we're not earning our fee, you should leave.</div>
       </details>
     </div>
   </div>
@@ -557,8 +618,8 @@
 <!-- ===== FINAL CTA ===== -->
 <section class="final-cta">
   <div class="container">
-    <h2>Ready to book 5-15 meetings per month on autopilot?</h2>
-    <p class="lead">15-minute fit call. We'll tell you if you're a good fit, and what your realistic first-month results look like.</p>
+    <h2>Ready to book 5-15 meetings per month?</h2>
+    <p class="lead">15-minute call. We'll tell you if you're a good fit, what your realistic first-month results look like, and which tier makes sense for your situation. No pitch if it's not right.</p>
     <a href="https://calendly.com/outboundsolved/15min" class="btn">Book a 15-min fit call →</a>
     <div class="trust-badges" style="justify-content:center">
       <span>✓ No long-term contracts</span>
@@ -576,61 +637,7 @@
     ·
     <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
   </div>
-  <div style="margin-top:24px;max-width:480px;margin-left:auto;margin-right:auto;padding:0 16px">
-    <p style="font-size:.85rem;color:#8b949e;margin-bottom:8px">Not ready to chat? Get the playbook instead:</p>
-    <form class="capture-form" id="capture-form-footer" action="https://script.google.com/macros/s/AKfycbxclIShciimstYNyrUHmYD-w9fpkJW8VTp48jTSUp-aOuVkI-RlGlF2QEHIKHu_KNcuVA/exec" method="POST">
-      <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
-      <button type="submit" id="capture-btn-footer">Get the playbook</button>
-    </form>
-    <div class="capture-msg" id="capture-msg-footer"></div>
-  </div>
-  <div id="privacy" style="margin-top:32px;font-size:.75rem;color:#6e7681;max-width:600px;margin-left:auto;margin-right:auto;padding:0 16px">
-    <strong>Privacy:</strong> We collect email addresses solely to send the requested playbook and occasional
-    service updates (max 1 email/week). We never sell, share, or rent your information. Unsubscribe via the
-    link in any email, or email team@outboundsolved.com. We use Google Sheets to store submissions — Google
-    acts as our data processor.
-  </div>
 </footer>
-
-<script>
-// Email capture form handler — progressive enhancement (form works without JS too)
-document.querySelectorAll('form.capture-form').forEach(form => {
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formId = form.id;
-        const isPrimary = formId.includes('primary');
-        const btn = document.getElementById(isPrimary ? 'capture-btn-primary' : 'capture-btn-footer');
-        const msg = document.getElementById(isPrimary ? 'capture-msg-primary' : 'capture-msg-footer');
-        const email = form.querySelector('input[type="email"]').value.trim();
-
-        // Disable button, show loading
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-        msg.className = 'capture-msg';
-        msg.textContent = '';
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                mode: 'no-cors',  // Apps Script web apps require no-cors for cross-origin POST
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({ email: email })
-            });
-            // With no-cors we can't read the response, but if it didn't throw, it worked
-            msg.className = 'capture-msg success';
-            msg.textContent = '✓ Check your inbox — playbook is on the way.';
-            form.reset();
-            // Track conversion (no analytics yet — just visual confirmation)
-        } catch (err) {
-            msg.className = 'capture-msg error';
-            msg.textContent = 'Something went wrong. Email team@outboundsolved.com directly.';
-        } finally {
-            btn.disabled = false;
-            btn.textContent = 'Get the playbook';
-        }
-    });
-});
-</script>
 
 </body>
 </html>
