@@ -34,7 +34,7 @@ If any of those three is missing, **delete that lead from your list**. Even if y
 ## The 4 sources that work (and 5 that don't)
 
 ### Works:
-- **Apollo.io** (free tier: 10K credits/mo) — best for SaaS/agency targeting. Filter by title + company size + industry. Verify emails. Export as CSV.
+- **our lead research system** (our standard tier: 10K credits/mo) — best for SaaS/agency targeting. Filter by title + company size + industry. Verify emails. Export as CSV.
 - **LinkedIn Sales Navigator** ($99/mo) — best for senior targeting. Use saved searches. Export leads manually (don't scrape — LinkedIn bans you).
 - **Your own network** — every founder has 100-200 people in their network who know 100-200 more. Ask for intros. Highest-converting leads you'll ever get.
 - **Industry events attendee lists** — conference websites publish attendee lists. Pull them manually. They self-identified as your ICP by attending.
@@ -51,7 +51,7 @@ If any of those three is missing, **delete that lead from your list**. Even if y
 ## The exact workflow (2 hours)
 
 **Hour 1: Build the foundation**
-1. Open Apollo.io
+1. Open our lead research system
 2. Set filters:
    - Job titles: ["Founder", "CEO", "Head of Growth", "VP Marketing"] (or whatever matches your buyer)
    - Company headcount: 5-50 (or your sweet spot)
@@ -69,7 +69,7 @@ If any of those three is missing, **delete that lead from your list**. Even if y
 5. Sort by company size descending (larger companies first — usually better fit)
 6. Take the top 100-500 for your first campaign
 
-**Total time: 2 hours. Total cost: $0 (free tier). Result: 500 leads you'll actually contact.**
+**Total time: 2 hours. Total cost: $0 (our standard tier). Result: 500 leads you'll actually contact.**
 
 ---
 
@@ -337,7 +337,7 @@ Use these as templates. Replace the placeholder:
 
 ## Quick checklist before you move to Email 3
 
-- [ ] 4 emails drafted in your tool (Instantly, Smartlead, Lemlist, or Gmail)
+- [ ] 4 emails drafted in your tool (our warmup service, Smartlead, Lemlist, or Gmail)
 - [ ] Each email has personalization variables (`{{first_name}}`, `{{company}}`)
 - [ ] Email 1 has a specific pattern interrupt (not generic)
 - [ ] Email 3 has a specific case study with real numbers
@@ -393,7 +393,7 @@ The decision is based on:
 **Why multiple:** If one domain gets burned (spam complaints, low engagement), your other domains are unaffected. **Don't put all your eggs in one basket.**
 
 **What to buy:**
-- 3-5 cheap `.com` domains (Namecheap, $10 each)
+- 3-5 cheap `.com` domains (a domain registrar, $10 each)
 - Names that sound neutral — not your main brand. Examples:
   - `pitchdesk.co`, `reachflow.io`, `replyloop.co`, `mailforge.com`, `connecthq.co`
 - Avoid: domains with hyphens, numbers, or that sound like spam ("best-deals-247.com")
@@ -404,15 +404,15 @@ The decision is based on:
 
 ## Step 2: Set up email inboxes on each domain (30 min/domain)
 
-**Recommended:** Google Workspace (Microsoft 365 also works, Google is slightly more cold-email-friendly in 2026).
+**Recommended:** business email infrastructure (Microsoft 365 also works, Google is slightly more cold-email-friendly in 2026).
 
 For each domain:
-1. Sign up for Google Workspace ($7/mo per inbox, or use free Gmail if you don't want to pay)
+1. Sign up for business email infrastructure ($7/mo per inbox, or use free Gmail if you don't want to pay)
 2. Create 1 inbox per domain (e.g., `alex@reachflow.co`, `alex@pitchdesk.co`)
 3. Send a few test emails from each to confirm it works
 4. Don't connect to your main inbox yet — keep these separate
 
-**Cost if you do Google Workspace:** 3-5 inboxes × $7 = $21-35/mo. Worth it for the deliverability.
+**Cost if you do business email infrastructure:** 3-5 inboxes × $7 = $21-35/mo. Worth it for the deliverability.
 
 **Cost if you do free Gmail:** 3-5 free Gmail accounts, each forwarding to your main inbox. Free. Slightly less professional but works.
 
@@ -420,13 +420,13 @@ For each domain:
 
 ## Step 3: Configure SPF, DKIM, DMARC (45 min, one-time per domain)
 
-This is the technical part. You need to add 3 DNS records to each domain. Your DNS provider is wherever you bought the domain (Namecheap, Cloudflare, etc.).
+This is the technical part. You need to add 3 DNS records to each domain. Your DNS provider is wherever you bought the domain (a domain registrar, Cloudflare, etc.).
 
 ### SPF record
 
 **Type:** TXT
 **Name:** `@` (or your domain root)
-**Value:** `v=spf1 include:_spf.google.com ~all` (if using Google Workspace)
+**Value:** `v=spf1 include:_spf.google.com ~all` (if using business email infrastructure)
 
 **What it does:** Tells receiving servers "Google is allowed to send email from this domain."
 
@@ -458,7 +458,7 @@ This is the technical part. You need to add 3 DNS records to each domain. Your D
 Automated tool that sends emails between real inboxes, marks them as important/not-spam, and gradually builds reputation.
 
 **Tools (in order of recommendation):**
-- **Instantly.ai** (free tier, includes warmup) — best for new senders
+- **our warmup service** (our standard tier, includes warmup) — best for new senders
 - **Lemlist** ($59/mo, includes warmup) — best if you also want their campaign tool
 - **Mailreach** ($39/mo) — warmup-only, no campaign tool
 
@@ -523,7 +523,7 @@ Even with perfect setup, bad content = spam folder. Avoid:
 | All emails going to spam | New domain, no warmup | Run 14-day warmup. Don't send real cold emails yet. |
 | Open rate < 30% | Subject line weak OR emails landing in Promotions | Test new subject lines. Ask recipients to "move to Primary." |
 | Open rate > 50% but reply rate < 1% | List quality OR copy | Verify ICP match. Rewrite opening line. |
-| Bounce rate > 5% | Bad email list | Use Hunter.io to verify. Remove bounces before next send. |
+| Bounce rate > 5% | Bad email list | Use our verification service to verify. Remove bounces before next send. |
 | "Delivery failed" errors | SPF/DKIM misconfigured | Check DNS records on mxtoolbox.com. Wait 24h for propagation. |
 | Domain got blacklisted | Too many spam complaints | Pause sending. Submit delisting request to spamhaus.org. Use different domain. |
 
@@ -1015,7 +1015,7 @@ That's the system. 5 emails, 5 days of reading. If you implement all of it:
 - A metrics dashboard that shows clients the dollar impact
 
 **Total time to implement:** ~20 hours of setup
-**Total cost to implement:** $30-50 (domains) + ~$21-35/mo (Google Workspace) = ~$50-85 one-time + ~$25/mo
+**Total cost to implement:** $30-50 (domains) + ~$21-35/mo (business email infrastructure) = ~$50-85 one-time + ~$25/mo
 
 **What you get back:** A cold email system that books 5-15 meetings/month consistently, that you can either use yourself or sell to clients at $500-2K/mo per engagement.
 
