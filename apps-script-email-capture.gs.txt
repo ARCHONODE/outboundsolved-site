@@ -45,7 +45,7 @@ function doPost(e) {
 
     // Open the target Sheet explicitly (avoids "active spreadsheet" confusion)
     // Replace YOUR_SHEET_ID_HERE with your actual Google Sheet ID
-    var SHEET_ID = 'YOUR_SHEET_ID_HERE';
+    var SHEET_ID = '1g6ccAiBxjSrQgyBikdqeHR9KfmxmlSGktG8nFYH9GatLzYpS1lW7MNUy';
     var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('Sheet1') || SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
 
     // If this is the first submission, write headers
