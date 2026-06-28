@@ -18,6 +18,91 @@ const FROM_EMAIL = 'team@outboundsolved.com';
 const CALENDLY_LINK = 'https://calendly.com/outboundsolved/15min';
 
 // ============================================================
+// WEB APP ENTRY POINT (called when form is submitted via URL)
+// ============================================================
+
+/**
+ * Web app entry point. Called when someone POSTs to the Web App URL.
+ * This is what the landing page form uses.
+ *
+ * @param {Object} e - The POST event with form data
+ * @returns {TextOutput} JSON response
+ */
+function doPost(e) {
+  try {
+    // Parse form data
+    let email = '';
+
+    // Handle both URL-encoded form data and JSON
+    if (e.postData && e.postData.contents) {
+      // Try URL-encoded first (standard form submission)
+      const params = e.postData.contents.split('&');
+      for (const param of params) {
+        const [key, value] = param.split('=');
+        if (key === 'email' && value) {
+          email = decodeURIComponent(value.replace(/\+/g, ' '));
+          break;
+        }
+      }
+
+      // If no email found, try JSON
+      if (!email) {
+        try {
+          const json = JSON.parse(e.postData.contents);
+          email = json.email || '';
+        } catch (e) {
+          // Not JSON either, fall through
+        }
+      }
+    }
+
+    // Also check namedValues (in case Google sends it that way)
+    if (!email && e.namedValues && e.namedValues.email) {
+      email = e.namedValues.email[0];
+    }
+
+    if (!email) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: 'error', message: 'No email provided' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // Log to Leads tab
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const leadsSheet = ss.getSheetByName('Leads');
+    const now = new Date();
+
+    leadsSheet.appendRow([
+      now.toISOString(),
+      email,
+      'Landing page form',
+      '', // UTM Source
+      '', // UTM Medium
+      'New',
+      'Welcome sequence started ' + now.toISOString().split('T')[0],
+      'Auto-enrolled in 5-email welcome sequence'
+    ]);
+
+    // Send Email 1 immediately
+    sendEmail1(email);
+
+    // Schedule Emails 2-5
+    scheduleFollowupEmails(email);
+
+    // Return success
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'ok', message: 'Lead captured, welcome sequence started' }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    Logger.log(`Error in doPost: ${error.toString()}`);
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'error', message: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// ============================================================
 // MAIN TRIGGER: Email capture form submission
 // ============================================================
 
