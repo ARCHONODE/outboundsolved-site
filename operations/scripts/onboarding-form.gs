@@ -18,7 +18,7 @@
 // ============================================================
 const SHEET_ID = 'YOUR_SHEET_ID_HERE';  // Get this from your Sheet URL: /d/THIS_PART/edit
 const CALENDLY_LINK = 'https://calendly.com/outboundsolved/15min';
-const FROM_EMAIL = 'team@outboundsolved.com';
+const FROM_EMAIL = 'archonode.assistant@gmail.com';  // Use your real Gmail until you set up "Send as" for team@outboundsolved.com
 
 // ============================================================
 // MAIN TRIGGER FUNCTION
