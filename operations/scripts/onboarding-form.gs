@@ -77,37 +77,37 @@ function onFormSubmit(e) {
     const clientFolder = DriveApp.getRootFolder().createFolder(folderName);
     Logger.log(`Created Drive folder: ${folderName}`);
 
-    // 3. Send welcome email
-    const subject = `Welcome to OutboundSolved — let's schedule your kickoff`;
-    const body = `Hi ${contact},
+    // 2. Send welcome email (Email 1 of welcome sequence)
+    const subject = `Welcome to OutboundSolved — your B2B cold email playbook is here`;
+    const body = `Hi ${contact ? contact.split(' ')[0] : 'there'},
 
-Welcome to OutboundSolved! 🎉
+Thanks for downloading the B2B Cold Email Playbook. Here's the full system we use to book 5-15 qualified meetings per month for B2B SaaS clients.
 
-Here's what happens next:
+The playbook covers:
+- List-building (where to find 1,000 ICP-matched leads in 2 hours)
+- The 4-email sequence that consistently books meetings
+- Deliverability setup (SPF/DKIM/DMARC + warmup)
+- Reply handling framework (auto-reply + escalate + close)
+- The metrics dashboard (what to track, when to worry)
 
-Step 1: Schedule your kickoff call
-Book a 30-minute slot in the next 7 days:
-${CALENDLY_LINK}
+**Read it here:** https://outboundsolved.com/assets/5-part-cold-email-playbook.md
 
-Step 2: Prepare for the call (5 min review)
-Think about your 3-5 best past customers — what made them great? We'll use this in the kickoff.
+Over the next 5 days, I'll send you 4 more emails walking through specific parts of the playbook — with real examples from our client work.
 
-Your dedicated Drive folder:
-https://drive.google.com/drive/folders/${clientFolder.getId()}
+Email 2 (tomorrow): The 4-email sequence we use (with subject lines that work)
+Email 3 (day 3): How we deliverability-protect new domains in 14 days
+Email 4 (day 4): The reply-handling framework (positive/objection/unsubscribe)
+Email 5 (day 5): How to know if cold email is working for you (metrics that matter)
 
-Your onboarding timeline:
-- Day 1: Kickoff call (30 min)
-- Days 2-7: We build your lead list, email sequence, and deliverability infrastructure
-- Days 8-14: Soft launch and reply handling
-- Day 14+: Weekly performance reports every Monday
+If you want to skip ahead and see how we'd do this for YOUR business, here's my calendar: ${CALENDLY_LINK}
 
-If you have any questions before our call, just reply to this email.
-
-Welcome aboard,
+Talk soon,
 The OutboundSolved team
 
 ---
-This is an automated message from your onboarding form submission.`;
+You're receiving this because you submitted your email on outboundsolved.com.
+Reply to this email if you'd like to unsubscribe.
+`;
 
     GmailApp.sendEmail(email, subject, body, {
       from: FROM_EMAIL,
