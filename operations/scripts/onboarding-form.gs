@@ -26,10 +26,16 @@ const FROM_EMAIL = 'team@outboundsolved.com';
 
 /**
  * Triggered when someone submits the Onboarding Form
- * @param {Object} e - The form submit event
+ * @param {Object} e - The form submit event (passed automatically when triggered by form submission)
  */
 function onFormSubmit(e) {
   try {
+    // Handle manual testing (when e is undefined)
+    if (!e || !e.namedValues) {
+      Logger.log('No event data. This function is designed to run from a form submission trigger. To test manually, use testOnboardingForm() instead.');
+      return;
+    }
+
     const values = e.namedValues;
 
     // Extract form data
@@ -136,6 +142,34 @@ This is an automated message from your onboarding form submission.`;
       `Error processing onboarding form submission:\n\n${error.toString()}\n\nCheck the Apps Script execution log for details.`
     );
   }
+}
+
+// ============================================================
+// TEST FUNCTION (run this manually to test without submitting the form)
+// ============================================================
+
+/**
+ * Test the onboarding flow with sample data
+ * Run this function manually from the script editor to test
+ * (Does NOT require a real form submission)
+ */
+function testOnboardingForm() {
+  // Sample test data (mimics what e.namedValues looks like)
+  const testEvent = {
+    namedValues: {
+      'Company name': ['TestCorp Inc'],
+      'Primary contact name': ['Test User'],
+      'Primary contact email': ['archonode.assistant+testclient@gmail.com'],
+      'Pricing tier': ['Growth ($2,497/mo) — Most popular'],
+      'Describe your ideal customer (ICP) in 2-3 sentences': ['VP Marketing at B2B SaaS companies with 50-200 employees'],
+      "What's your average deal size?": ['$5,000 - $25,000'],
+      'Anything else we should know?': ['This is a test submission']
+    }
+  };
+
+  Logger.log('Running test with sample data...');
+  onFormSubmit(testEvent);
+  Logger.log('Test complete. Check the Clients tab, Drive, and email.');
 }
 
 // ============================================================
