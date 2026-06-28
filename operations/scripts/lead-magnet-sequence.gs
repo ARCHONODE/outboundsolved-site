@@ -203,7 +203,7 @@ function sendScheduled_email5() {
 function testDoPost() {
   var testEvent = {
     postData: {
-      contents: 'email=archonode.assistant+testdoPost@gmail.com'
+      contents: 'email=archonode.assistant%2BtestdoPost@gmail.com'
     }
   };
   var result = doPost(testEvent);
