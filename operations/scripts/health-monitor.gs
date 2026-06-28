@@ -108,7 +108,7 @@ function generateWeeklyReports() {
 
         // Build report content
         const reportContent = buildReport(
-          clientName, tier, weeklyCount: totalReplies,
+          clientName, tier, totalReplies,
           positiveReplies, meetings, replyRate, pipelineEstimate, monthlyFee, roiMultiple, health, healthNote, weekLabel, today
         );
 
@@ -156,7 +156,7 @@ function generateWeeklyReports() {
 /**
  * Builds the formatted Markdown report for one client
  */
-function buildReport(clientName, tier, weeklyCount: totalReplies, positiveReplies, meetings, replyRate, pipelineEstimate, monthlyFee, roiMultiple, health, healthNote, weekLabel, today) {
+function buildReport(clientName, tier, totalReplies, positiveReplies, meetings, replyRate, pipelineEstimate, monthlyFee, roiMultiple, health, healthNote, weekLabel, today) {
   return `# Weekly Outbound Report — ${clientName}
 
 **Period:** ${weekLabel} to ${today}
