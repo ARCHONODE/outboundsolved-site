@@ -365,6 +365,55 @@
   footer a{color:#c9d1d9;margin:0 8px}
   footer a:hover{color:#00d97e}
 
+  /* ============ EMAIL CAPTURE FORM ============ */
+  .hero-form{
+    max-width:480px;
+    margin:24px auto 0;
+    display:flex;
+    gap:8px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,217,126,.3);
+    border-radius:8px;
+    padding:8px;
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .hero-form:focus-within{
+    border-color:#00d97e;
+    box-shadow:0 0 0 4px rgba(0,217,126,.15);
+  }
+  .hero-form input[type=email]{
+    flex:1;
+    border:none;
+    background:transparent;
+    color:#fff;
+    font-size:1rem;
+    padding:8px 12px;
+    outline:none;
+    font-family:inherit;
+  }
+  .hero-form input[type=email]::placeholder{color:#8b949e}
+  .hero-form button{
+    border:none;
+    background:#00d97e;
+    color:#0a1929;
+    font-weight:700;
+    font-size:.95rem;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:transform .15s,box-shadow .15s;
+    font-family:inherit;
+  }
+  .hero-form button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 4px 12px rgba(0,217,126,.3);
+  }
+  .hero-form-note{
+    text-align:center;
+    font-size:.85rem;
+    color:#8b949e;
+    margin-top:12px;
+  }
   @media (max-width:640px){
     section{padding:60px 0}
     .hero{padding:80px 0 60px}
@@ -372,6 +421,8 @@
     .price-card.popular{transform:none}
     .price-card.popular:hover{transform:translateY(-4px)}
     .trust-badges{justify-content:center}
+    .hero-form{flex-direction:column}
+    .hero-form button{padding:12px}
     h1{font-size:2rem}
     h2{font-size:1.6rem}
   }
@@ -387,11 +438,17 @@
       <span class="accent">Without writing a single cold email yourself.</span>
     </h1>
     <p class="lead">
-      Done-for-you B2B cold email for SaaS founders and agency owners. 
+      Done-for-you B2B cold email for SaaS founders and agency owners.
       We build, send, and handle replies. You show up to close.
     </p>
-    <a href="https://calendly.com/outboundsolved/15min" class="btn">Book a 15-min fit call →</a>
-    <div class="trust-badges">
+
+    <form class="hero-form" id="capture-form-hero" action="https://script.google.com/macros/s/AKfycbzCBmFqAycGNq3jhSjIilJWE3Llrn7Vrp0nslq1x7Msiwl3mgPUlYboC7IH36vVfqKOCQ/exec" method="POST">
+      <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
+      <button type="submit">Get the playbook →</button>
+    </form>
+    <p class="hero-form-note">Free 5-part email course · No credit card · Unsubscribe anytime</p>
+
+    <div class="trust-badges" style="margin-top:32px">
       <span>✓ Live in 14 days</span>
       <span>✓ Reply within 1 hour</span>
       <span>✓ Cancel anytime</span>
@@ -702,9 +759,19 @@
 <section class="final-cta">
   <div class="container">
     <h2>Ready to book 5-15 meetings per month?</h2>
-    <p class="lead">15-minute call. We'll tell you if you're a good fit, what your realistic first-month results look like, and which tier makes sense for your situation. No pitch if it's not right.</p>
-    <a href="https://calendly.com/outboundsolved/15min" class="btn">Book a 15-min fit call →</a>
-    <div class="trust-badges" style="justify-content:center">
+    <p class="lead">Get our free 5-part cold email playbook. We'll send it over 5 days with the exact system we use for clients. Or skip ahead and book a 15-min fit call.</p>
+
+    <form class="hero-form" id="capture-form-final" action="https://script.google.com/macros/s/AKfycbzCBmFqAycGNq3jhSjIilJWE3Llrn7Vrp0nslq1x7Msiwl3mgPUlYboC7IH36vVfqKOCQ/exec" method="POST">
+      <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
+      <button type="submit">Get the playbook →</button>
+    </form>
+    <p class="hero-form-note">Free 5-part email course · No credit card · Unsubscribe anytime</p>
+
+    <p style="margin-top:24px;font-size:.95rem;color:#8b949e">
+      Or <a href="https://calendly.com/outboundsolved/15min" style="color:#00d97e;text-decoration:underline">book a 15-min fit call directly</a> if you're ready to talk.
+    </p>
+
+    <div class="trust-badges" style="justify-content:center;margin-top:24px">
       <span>✓ No long-term contracts</span>
       <span>✓ Live in 14 days</span>
       <span>✓ Cancel anytime</span>
