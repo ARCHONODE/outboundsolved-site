@@ -2,7 +2,7 @@
  * OutboundSolved — New Client Onboarding Form Handler
  *
  * SETUP:
- * 1. Update SHEET_ID below with your Ops Hub Google Sheet ID
+ * 1. Update ONBOARDING_FORM_SHEET_ID below with your Ops Hub Google Sheet ID
  * 2. Save this script
  * 3. Set up trigger: Form submit → onFormSubmit
  *
@@ -16,9 +16,9 @@
 // ============================================================
 // CONFIG — UPDATE THESE WITH YOUR IDs
 // ============================================================
-const SHEET_ID = 'YOUR_SHEET_ID_HERE';  // Get this from your Sheet URL: /d/THIS_PART/edit
-const CALENDLY_LINK = 'https://calendly.com/outboundsolved/15min';
-const FROM_EMAIL = 'team@outboundsolved.com';  // Now configured with Send-as + app password
+const ONBOARDING_FORM_SHEET_ID = 'YOUR_SHEET_ID_HERE';  // Get this from your Sheet URL: /d/THIS_PART/edit
+const ONBOARDING_FORM_CALENDLY_LINK = 'https://calendly.com/outboundsolved/15min';
+const ONBOARDING_FORM_FROM_EMAIL = 'team@outboundsolved.com';  // Now configured with Send-as + app password
 
 // ============================================================
 // MAIN TRIGGER FUNCTION
@@ -53,7 +53,7 @@ function onFormSubmit(e) {
     }
 
     // 1. Add to Clients tab
-    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const ss = SpreadsheetApp.openById(ONBOARDING_FORM_SHEET_ID);
     const clientsSheet = ss.getSheetByName('Clients');
 
     clientsSheet.appendRow([
@@ -99,7 +99,7 @@ Email 3 (day 3): How we deliverability-protect new domains in 14 days
 Email 4 (day 4): The reply-handling framework (positive/objection/unsubscribe)
 Email 5 (day 5): How to know if cold email is working for you (metrics that matter)
 
-If you want to skip ahead and see how we'd do this for YOUR business, here's my calendar: ${CALENDLY_LINK}
+If you want to skip ahead and see how we'd do this for YOUR business, here's my calendar: ${ONBOARDING_FORM_CALENDLY_LINK}
 
 Talk soon,
 The OutboundSolved team
@@ -110,7 +110,7 @@ Reply to this email if you'd like to unsubscribe.
 `;
 
     GmailApp.sendEmail(email, subject, body, {
-      from: FROM_EMAIL,
+      from: ONBOARDING_FORM_FROM_EMAIL,
       name: 'OutboundSolved'
     });
 
@@ -137,7 +137,7 @@ Reply to this email if you'd like to unsubscribe.
     Logger.log(`Error in onFormSubmit: ${error.toString()}`);
     // Optional: send yourself an error notification
     GmailApp.sendEmail(
-      FROM_EMAIL,
+      ONBOARDING_FORM_FROM_EMAIL,
       'Ops Hub Error — Onboarding Form',
       `Error processing onboarding form submission:\n\n${error.toString()}\n\nCheck the Apps Script execution log for details.`
     );

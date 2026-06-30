@@ -2,7 +2,7 @@
  * OutboundSolved — Weekly Client Health Monitor
  *
  * SETUP:
- * 1. Update SHEET_ID and REPORTS_FOLDER_ID below
+ * 1. Update HEALTH_MONITOR_SHEET_ID and HEALTH_MONITOR_REPORTS_FOLDER_ID below
  * 2. Set up trigger: Time-driven → Week timer → Friday 5pm → generateWeeklyReports
  *
  * WHAT IT DOES:
@@ -17,11 +17,11 @@
 // ============================================================
 // CONFIG
 // ============================================================
-const SHEET_ID = 'YOUR_SHEET_ID_HERE';
-const CLIENTS_SHEET = 'Clients';
-const REPLIES_SHEET = 'Replies';
-const REPORTS_SHEET = 'Weekly Reports';
-const REPORTS_FOLDER_ID = 'YOUR_DRIVE_FOLDER_ID_HERE';  // Drive folder for weekly reports
+const HEALTH_MONITOR_SHEET_ID = 'YOUR_SHEET_ID_HERE';
+const HEALTH_MONITOR_CLIENTS_SHEET = 'Clients';
+const HEALTH_MONITOR_REPLIES_SHEET = 'Replies';
+const HEALTH_MONITOR_REPORTS_SHEET = 'Weekly Reports';
+const HEALTH_MONITOR_REPORTS_FOLDER_ID = 'YOUR_DRIVE_FOLDER_ID_HERE';  // Drive folder for weekly reports
 
 // ============================================================
 // MAIN FUNCTION
@@ -33,11 +33,11 @@ const REPORTS_FOLDER_ID = 'YOUR_DRIVE_FOLDER_ID_HERE';  // Drive folder for week
  */
 function generateWeeklyReports() {
   try {
-    const ss = SpreadsheetApp.openById(SHEET_ID);
-    const clientsSheet = ss.getSheetByName(CLIENTS_SHEET);
-    const repliesSheet = ss.getSheetByName(REPLIES_SHEET);
-    const reportsSheet = ss.getSheetByName(REPORTS_SHEET);
-    const reportsFolder = DriveApp.getFolderById(REPORTS_FOLDER_ID);
+    const ss = SpreadsheetApp.openById(HEALTH_MONITOR_SHEET_ID);
+    const clientsSheet = ss.getSheetByName(HEALTH_MONITOR_CLIENTS_SHEET);
+    const repliesSheet = ss.getSheetByName(HEALTH_MONITOR_REPLIES_SHEET);
+    const reportsSheet = ss.getSheetByName(HEALTH_MONITOR_REPORTS_SHEET);
+    const reportsFolder = DriveApp.getFolderById(HEALTH_MONITOR_REPORTS_FOLDER_ID);
 
     // Get all active/onboarding clients (skip header row)
     const clientsData = clientsSheet.getDataRange().getValues();

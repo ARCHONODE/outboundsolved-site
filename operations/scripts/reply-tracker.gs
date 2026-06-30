@@ -2,7 +2,7 @@
  * OutboundSolved — Reply Tracker
  *
  * SETUP:
- * 1. Update SHEET_ID below with your Ops Hub Google Sheet ID
+ * 1. Update REPLY_TRACKER_SHEET_ID below with your Ops Hub Google Sheet ID
  * 2. Create a Gmail label called "Cold-Outreach-Replies" and apply it to replies
  * 3. Set up trigger: Time-driven → Every 5 minutes → processReplies
  *
@@ -16,22 +16,22 @@
 // ============================================================
 // CONFIG
 // ============================================================
-const SHEET_ID = 'YOUR_SHEET_ID_HERE';  // Your Ops Hub Google Sheet ID
-const SHEET_NAME = 'Replies';
-const TRIGGER_LABEL = 'Cold-Outreach-Replies';  // Must match your Gmail label exactly
+const REPLY_TRACKER_SHEET_ID = 'YOUR_SHEET_ID_HERE';  // Your Ops Hub Google Sheet ID
+const REPLY_TRACKER_SHEET_NAME = 'Replies';
+const REPLY_TRACKER_TRIGGER_LABEL = 'Cold-Outreach-Replies';  // Must match your Gmail label exactly
 
 // ============================================================
 // MAIN FUNCTION
 // ============================================================
 
 /**
- * Processes unread Gmail messages with the TRIGGER_LABEL
+ * Processes unread Gmail messages with the REPLY_TRACKER_TRIGGER_LABEL
  * Runs automatically every 5 minutes via time-based trigger
  */
 function processReplies() {
   try {
-    const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
-    const threads = GmailApp.search(`label:${TRIGGER_LABEL} is:unread`, 0, 50);
+    const sheet = SpreadsheetApp.openById(REPLY_TRACKER_SHEET_ID).getSheetByName(REPLY_TRACKER_SHEET_NAME);
+    const threads = GmailApp.search(`label:${REPLY_TRACKER_TRIGGER_LABEL} is:unread`, 0, 50);
 
     let processed = 0;
     let skipped = 0;
