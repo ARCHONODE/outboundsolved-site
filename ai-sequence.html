@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Cold Email Sequence Generator — Custom Sequences in 60 Seconds | $19</title>
+<meta name="description" content="Generate a custom 4-email cold outreach sequence using AI. Just answer 6 questions, get a personalized sequence delivered to your inbox. $19 one-time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="site-logo">Outbound<span>Solved</span></a>
+    <div class="nav-links">
+      <a href="/hub.html">Marketplace</a>
+      <a href="/hub.html#cold-email">Cold Email</a>
+      <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/hub.html">Marketplace</a>
+  <a href="/hub.html#cold-email">Cold Email</a>
+  <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container-narrow">
+    <div class="product-image" style="max-width:240px;margin:0 auto var(--sp-6);font-size:4rem">🤖</div>
+    <h1 class="fade-up">Your custom cold email sequence<br><span class="accent">in 60 seconds.</span></h1>
+    <p class="subhead fade-up fade-up-1">Answer 6 questions about your offer and audience. AI generates a personalized 4-email sequence, delivered to your inbox. No more staring at a blank screen.</p>
+
+    <div class="proof-bar fade-up fade-up-2">
+      <div class="proof-item"><strong>60s</strong><span class="label">to generate</span></div>
+      <div class="proof-item"><strong>4</strong><span class="label">emails per sequence</span></div>
+      <div class="proof-item"><strong>$19</strong><span class="label">one-time</span></div>
+      <div class="proof-item"><strong>∞</strong><span class="label">regenerate free</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="tight">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2>How it works</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>Fill the form</h3>
+        <p>Answer 6 questions: your offer, your audience, their pain points, your tone, sender context, and any proof points.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>AI generates</h3>
+        <p>Our AI engine (powered by Gemini + our prompt engineering) creates a custom 4-email sequence in under 60 seconds.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>Get it in your inbox</h3>
+        <p>Your sequence is emailed to you, ready to copy-paste into your sending tool. Regenerate as many times as you want.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="tight" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container-narrow">
+    <div class="card" style="padding:var(--sp-8)">
+      <h2 class="text-center mb-8">Generate your sequence</h2>
+      <p class="text-center muted mb-8" style="font-size:var(--fs-sm)">Pay once ($19), use forever. Generate unlimited sequences.</p>
+
+      <form id="sequence-form" onsubmit="handleSubmit(event)">
+        <div style="display:grid;gap:var(--sp-4)">
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Your email (for delivery)</label>
+            <input type="email" name="email" required placeholder="you@company.com" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Your offer / product</label>
+            <input type="text" name="offer" required placeholder="e.g., AI-powered sales coaching platform" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Target audience</label>
+            <input type="text" name="audience" required placeholder="e.g., B2B SaaS founders doing $1-5M ARR" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Their #1 pain point</label>
+            <input type="text" name="pain" required placeholder="e.g., Not enough qualified demos booked" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Tone</label>
+            <select name="tone" required style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+              <option value="professional">Professional (B2B SaaS)</option>
+              <option value="casual">Casual (startups, creators)</option>
+              <option value="bold">Bold (contrarian, attention-grabbing)</option>
+              <option value="friendly">Friendly (consultative)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Proof point (optional)</label>
+            <input type="text" name="proof" placeholder="e.g., Helped 12 SaaS founders book 100+ demos in 60 days" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm);color:var(--text-primary)">Sender name & company</label>
+            <input type="text" name="sender" required placeholder="e.g., Sarah at OutboundSolved" style="width:100%;padding:var(--sp-4);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-base);outline:none;font-family:inherit;min-height:48px">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-large" style="width:100%;margin-top:var(--sp-6);min-height:56px;font-size:var(--fs-base)">
+          Generate my sequence — $19 →
+        </button>
+        <p class="text-center muted" style="margin-top:var(--sp-3);font-size:var(--fs-xs)">Secure payment via Stripe · Instant access · 30-day money-back</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="tight">
+  <div class="container-narrow">
+    <div class="card featured" style="text-align:center;padding:var(--sp-10)">
+      <h2 style="margin-bottom:var(--sp-4)">Generate as many sequences as you want</h2>
+      <p class="lead" style="margin:0 auto var(--sp-6);max-width:520px">Pay once. Use forever. Test different angles, regenerate until you find what works, and never pay again.</p>
+      <p style="margin:0"><strong>One payment.</strong> Unlimited sequences.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="tight">
+  <div class="container-narrow">
+    <h2 class="text-center mb-12">Frequently asked questions</h2>
+
+    <div class="grid" style="gap:var(--sp-3)">
+      <div class="card">
+        <h3>How fast does it generate?</h3>
+        <p>Usually under 60 seconds. Sometimes 2-3 minutes during peak AI usage.</p>
+      </div>
+      <div class="card">
+        <h3>Can I regenerate?</h3>
+        <p>Yes. Use the same form, get a new sequence. Test different angles, tones, proof points.</p>
+      </div>
+      <div class="card">
+        <h3>What AI model is used?</h3>
+        <p>Gemini 2.0 Flash via OpenRouter. High quality, fast, free to operate.</p>
+      </div>
+      <div class="card">
+        <h3>Can I use this for clients?</h3>
+        <p>Yes. Generate sequences for any offer/audience combination. No usage limits.</p>
+      </div>
+      <div class="card">
+        <h3>What if I don't like the result?</h3>
+        <p>30-day money-back guarantee. If the sequences don't work for your use case, get a full refund.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CROSS-SELL ===== -->
+<section class="tight" style="background:var(--bg-secondary);border-top:1px solid var(--border)">
+  <div class="container">
+    <h2 class="text-center mb-12">Customers who used this also got</h2>
+    <div class="grid grid-3">
+      <a href="/coldstack.html" class="card" style="text-decoration:none;color:inherit">
+        <div class="product-image" style="margin-bottom:var(--sp-3)">📧</div>
+        <h3>Cold Email Templates</h3>
+        <p class="muted" style="margin-bottom:var(--sp-3)">50 proven templates you can edit directly.</p>
+        <div style="color:var(--accent);font-weight:700">$19 →</div>
+      </a>
+      <a href="/hub.html#cold-email" class="card" style="text-decoration:none;color:inherit">
+        <div class="product-image" style="margin-bottom:var(--sp-3)">📬</div>
+        <h3>Deliverability Playbook</h3>
+        <p class="muted" style="margin-bottom:var(--sp-3)">Make sure your emails land in the inbox.</p>
+        <div style="color:var(--accent);font-weight:700">$19 →</div>
+      </a>
+      <a href="/hub.html" class="card" style="text-decoration:none;color:inherit">
+        <div class="product-image" style="margin-bottom:var(--sp-3)">📨</div>
+        <h3>100 Cold Emails That Worked</h3>
+        <p class="muted" style="margin-bottom:var(--sp-3)">Real examples that booked meetings.</p>
+        <div style="color:var(--accent);font-weight:700">$19 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="site-logo">Outbound<span>Solved</span></a>
+        <p class="footer-brand">The outbound toolkit for B2B professionals. 11+ tools for cold email, LinkedIn, sales calls, and more.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/hub.html#cold-email">Cold Email</a></li>
+          <li><a href="/hub.html#linkedin">LinkedIn</a></li>
+          <li><a href="/hub.html#sales-calls">Sales Calls</a></li>
+          <li><a href="/hub.html#lead-gen">Lead Gen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/hub.html">Marketplace</a></li>
+          <li><a href="mailto:team@outboundsolved.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://calendly.com/outboundsolved/15min">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 OutboundSolved · All rights reserved
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-mobile-cta">
+  <a href="#sequence-form" class="btn">Generate your sequence — $19 →</a>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value;
+  // Redirect to Stripe payment
+  // After Stripe payment, the webhook will redirect to the actual generator
+  const stripeLink = 'https://buy.stripe.com/6oU4gA5lkgKTdgs2MD6oo04' + 
+    '?prefilled_email=' + encodeURIComponent(email);
+  window.location.href = stripeLink;
+}
+</script>
+
+</body>
+</html>
