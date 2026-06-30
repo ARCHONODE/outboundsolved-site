@@ -23,8 +23,24 @@
       <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
       <a href="/hub.html" class="cta">Browse tools</a>
     </div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/hub.html">Marketplace</a>
+  <a href="/hub.html#cold-email">Cold Email</a>
+  <a href="/hub.html#linkedin">LinkedIn</a>
+  <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
+  <a href="/hub.html" class="cta">Browse tools</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
@@ -55,7 +71,8 @@
 <!-- ===== FEATURED PRODUCT ===== -->
 <section class="tight">
   <div class="container">
-    <div class="product-card featured" style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-8);align-items:center">
+    <div class="product-card featured" style="display:grid;grid-template-columns:1fr;gap:var(--sp-5);align-items:center">
+      <div class="product-image" style="margin-bottom:0">📧</div>
       <div>
         <span class="badge badge-live" style="position:static;display:inline-block;margin-bottom:var(--sp-3)">Most popular</span>
         <h2 style="margin-bottom:var(--sp-3)">50 Cold Email Templates for B2B SaaS</h2>
@@ -66,10 +83,6 @@
           <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn btn-large">Get it for $47 →</a>
           <span class="muted">Instant download · PDF + Markdown · No subscription</span>
         </div>
-      </div>
-      <div style="text-align:right">
-        <div style="font-size:var(--fs-5xl);font-weight:800;color:var(--accent);line-height:1">$47</div>
-        <div class="muted" style="font-size:var(--fs-sm)">one-time payment</div>
       </div>
     </div>
   </div>
@@ -184,8 +197,13 @@
       </div>
       <div class="testimonial">
         <p class="quote">The follow-up sequences alone are worth it. My reply rate went from 2% to 8%. Now I send 4 emails, not just 1.</p>
-        <div class="name">Mike R.</div>
-        <div class="role">VP Sales, B2B SaaS</div>
+        <div class="author">
+          <div class="avatar">MR</div>
+          <div>
+            <div class="name">Mike R.</div>
+            <div class="role">VP Sales, B2B SaaS</div>
+          </div>
+        </div>
       </div>
       <div class="testimonial">
         <p class="quote">As a freelancer, I was sending 5 cold emails a week. Now I send 50. Landed 2 new clients in my first month.</p>
@@ -201,54 +219,42 @@
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
+<!-- ===== PRICING (Simplified 2-tier model) ===== -->
 <section style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
     <div class="text-center mb-12">
-      <h2>Pick your starting point</h2>
-      <p class="lead" style="margin:var(--sp-4) auto 0">Start with one tool, or get the bundle. No subscriptions, no surprises.</p>
+      <h2>Simple pricing</h2>
+      <p class="lead" style="margin:var(--sp-4) auto 0">Pay once, download instantly. No subscriptions, no hidden fees.</p>
     </div>
-    <div class="pricing-grid">
+    <div class="pricing-grid" style="max-width:800px;margin:0 auto">
       <div class="price-card">
-        <div class="name">Single</div>
-        <div class="price">$19<small>/tool</small></div>
-        <p class="desc">One tool from one category.</p>
+        <div class="name">Single Tool</div>
+        <div class="price">$19-97<small>/tool</small></div>
+        <p class="desc">Pick any one tool from the marketplace. Most are $27-47.</p>
         <ul>
-          <li>Pick any single tool</li>
           <li>Instant PDF + Markdown download</li>
+          <li>Use forever, no subscription</li>
           <li>Free updates for life</li>
-          <li>30-day money-back</li>
+          <li>30-day money-back guarantee</li>
         </ul>
-        <a href="/hub.html" class="btn btn-ghost" style="width:100%;justify-content:center">Browse tools</a>
+        <a href="/hub.html" class="btn btn-ghost btn-block">Browse tools</a>
       </div>
 
       <div class="price-card popular">
-        <span class="tag">Most popular</span>
-        <div class="name">Bundle</div>
-        <div class="price">$47<small>/bundle</small></div>
-        <p class="desc">Pick a category, get all its tools.</p>
-        <ul>
-          <li>All tools in one category</li>
-          <li>Save 40% vs buying individually</li>
-          <li>Instant access to everything</li>
-          <li>Free updates for life</li>
-        </ul>
-        <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn" style="width:100%;justify-content:center">Get Cold Email bundle</a>
-      </div>
-
-      <div class="price-card">
-        <div class="name">Complete</div>
+        <span class="tag">Best value</span>
+        <div class="name">Complete Toolkit</div>
         <div class="price">$197<small>/lifetime</small></div>
-        <p class="desc">Every tool, every category, forever.</p>
+        <p class="desc">Every tool, every category, forever. New tools added free.</p>
         <ul>
-          <li>All 12 tools across 6 categories</li>
+          <li>All 12+ tools across 6 categories</li>
           <li>Save 50%+ vs individual</li>
           <li>New tools added free</li>
           <li>Priority support</li>
         </ul>
-        <a href="/hub.html" class="btn btn-ghost" style="width:100%;justify-content:center">Notify me</a>
+        <a href="mailto:team@outboundsolved.com?subject=Complete%20Toolkit%20waitlist" class="btn btn-block">Join waitlist</a>
       </div>
     </div>
+    <p class="text-center muted" style="margin-top:var(--sp-6)">Need a category bundle? Check the <a href="/hub.html" style="color:var(--accent)">marketplace</a> for category-specific bundles.</p>
   </div>
 </section>
 
@@ -309,6 +315,17 @@
     </div>
   </div>
 </footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-mobile-cta">
+  <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn">Get Cold Email Templates — $47 →</a>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
 
 </body>
 </html>

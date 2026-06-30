@@ -21,8 +21,22 @@
       <a href="/hub.html#cold-email">Cold Email</a>
       <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
     </div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/hub.html">Marketplace</a>
+  <a href="/hub.html#cold-email">Cold Email</a>
+  <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
@@ -255,6 +269,17 @@
     </div>
   </div>
 </footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-mobile-cta">
+  <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn">Get Cold Email Templates — $47 →</a>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
 
 </body>
 </html>
