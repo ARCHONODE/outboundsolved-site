@@ -252,12 +252,56 @@ function handleSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const email = form.email.value;
+  const offer = form.offer.value;
+  const audience = form.audience.value;
+  const pain = form.pain.value;
+  const tone = form.tone.value;
+  const proof = form.proof.value || '';
+  const sender = form.sender.value;
+
+  // Store form data in localStorage so we can retrieve it after payment
+  localStorage.setItem('seq_form', JSON.stringify({
+    email, offer, audience, pain, tone, proof, sender
+  }));
+
   // Redirect to Stripe payment
-  // After Stripe payment, the webhook will redirect to the actual generator
-  const stripeLink = 'https://buy.stripe.com/6oU4gA5lkgKTdgs2MD6oo04' + 
-    '?prefilled_email=' + encodeURIComponent(email);
+  // After payment, Stripe sends to success URL — we pass ?paid=success
+  const stripeLink = 'https://buy.stripe.com/6oU4gA5lkgKTdgs2MD6oo04';
   window.location.href = stripeLink;
 }
+
+// On page load, check if user returned from successful payment
+window.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const paymentStatus = urlParams.get('paid');
+  const storedForm = localStorage.getItem('seq_form');
+
+  // Also check if we got redirected back from Stripe (success URL pattern)
+  if ((paymentStatus === 'success' || window.location.href.includes('stripe-success')) && storedForm) {
+    const formData = JSON.parse(storedForm);
+    const formEl = document.getElementById('sequence-form');
+
+    if (formEl) {
+      formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:3rem;margin-bottom:var(--sp-4)">⏳</div><h3 style="margin-bottom:var(--sp-3)">Generating your sequence...</h3><p style="color:var(--text-secondary)">This usually takes 30-60 seconds. We will email it to <strong>' + formData.email + '</strong></p></div>';
+
+      // Submit form data to Apps Script
+      const data = new URLSearchParams();
+      Object.keys(formData).forEach(key => data.append(key, formData[key]));
+
+      fetch('https://script.google.com/macros/s/AKfycbxGpPofOKGKcNDpHRx27guGvlXVNptOPBgikq-tqr1rYrm6gFgHDlGtl2oubOytAoh4FQ/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data.toString()
+      }).then(() => {
+        localStorage.removeItem('seq_form');
+        formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:4rem;margin-bottom:var(--sp-4);color:var(--accent)">✓</div><h3 style="margin-bottom:var(--sp-3);color:var(--accent)">Sequence generated!</h3><p style="color:var(--text-secondary);margin-bottom:var(--sp-5)">Check your inbox at <strong>' + formData.email + '</strong> for your custom 4-email cold outreach sequence.</p><p style="color:var(--text-tertiary);font-size:var(--fs-sm)">Did not see it? Check your spam folder. We will also save your inputs so you can regenerate anytime.</p></div>';
+      }).catch(() => {
+        formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:3rem;margin-bottom:var(--sp-4)">⚠️</div><h3 style="margin-bottom:var(--sp-3)">Something went wrong</h3><p style="color:var(--text-secondary)">Please contact team@outboundsolved.com and we will send your sequence manually.</p></div>';
+      });
+    }
+  }
+});
 </script>
 
 </body>
