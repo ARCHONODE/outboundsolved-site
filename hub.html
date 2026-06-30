@@ -3,332 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Outbound Toolkit — Marketplace | OutboundSolved</title>
-<meta name="description" content="Browse the full OutboundSolved marketplace: cold email templates, LinkedIn outreach scripts, sales call frameworks, lead generation tools, and more. Digital products for B2B professionals.">
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;background:#0a1929;color:#e6edf3;line-height:1.6}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px}
-  section{padding:60px 0}
-  h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;line-height:1.1;margin-bottom:20px;color:#fff}
-  h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:16px;color:#fff}
-  h3{font-size:1.2rem;font-weight:700;margin-bottom:8px;color:#fff}
-  p{margin-bottom:12px;color:#c9d1d9}
-  .lead{font-size:1.1rem;color:#c9d1d9;max-width:680px}
-  .btn{display:inline-block;padding:12px 24px;background:#00d97e;color:#0a1929;font-weight:700;font-size:.95rem;border-radius:8px;border:none;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s;margin:6px 4px}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,217,126,.25);opacity:1}
-  .btn-secondary{background:transparent;color:#00d97e;border:2px solid #00d97e}
-  .btn-disabled{background:#1e2d3d;color:#8b949e;border:2px solid #1e2d3d;cursor:not-allowed}
-  .btn-disabled:hover{transform:none;box-shadow:none}
-
-  /* HERO */
-  .hero{text-align:center;padding:80px 0 40px;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(0,217,126,.12),transparent)}
-  .hero h1{margin-bottom:16px}
-  .hero .accent{color:#00d97e;display:block;font-size:.6em;font-weight:600;margin-top:8px}
-
-  /* NAV */
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:0}
-  .nav a{color:#e6edf3;text-decoration:none;margin:0 12px;font-size:.95rem}
-  .nav .logo{font-weight:800;font-size:1.2rem;color:#fff}
-  .nav .logo span{color:#00d97e}
-
-  /* CATEGORY */
-  .category{margin-bottom:60px}
-  .category-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)}
-  .category-icon{font-size:2rem;width:48px;height:48px;background:rgba(0,217,126,.1);border:1px solid rgba(0,217,126,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .category-name{font-size:1.5rem;font-weight:700;color:#fff;margin:0}
-  .category-tagline{font-size:.95rem;color:#8b949e;margin:4px 0 0}
-
-  /* PRODUCT GRID */
-  .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-
-  /* PRODUCT CARD */
-  .product-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
-  .product-card:hover{border-color:rgba(0,217,126,.4);transform:translateY(-2px)}
-  .product-card.featured{border-color:rgba(0,217,126,.3);background:rgba(0,217,126,.05)}
-  .product-card.coming-soon{opacity:.75}
-  .badge{position:absolute;top:12px;right:12px;padding:3px 10px;border-radius:12px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-  .badge-live{background:#00d97e;color:#0a1929}
-  .badge-new{background:#00d97e;color:#0a1929}
-  .badge-soon{background:#1e2d3d;color:#8b949e}
-  .product-card h3{margin-bottom:8px}
-  .product-card .description{font-size:.92rem;color:#c9d1d9;flex:1;margin-bottom:16px}
-  .product-card .price{font-size:1.3rem;font-weight:800;color:#00d97e;margin-bottom:16px}
-  .product-card .price small{font-size:.8rem;color:#8b949e;font-weight:500}
-
-  /* EMAIL CAPTURE FORM (inline, for "Coming Soon") */
-  .notify-form{display:flex;gap:6px;margin-top:auto}
-  .notify-form input[type=email]{flex:1;padding:8px 12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#fff;border-radius:6px;font-size:.85rem;outline:none;font-family:inherit}
-  .notify-form input[type=email]::placeholder{color:#8b949e}
-  .notify-form button{padding:8px 14px;background:#00d97e;color:#0a1929;border:none;border-radius:6px;font-weight:700;font-size:.8rem;cursor:pointer;white-space:nowrap;font-family:inherit}
-  .notify-form button:hover{box-shadow:0 4px 12px rgba(0,217,126,.3)}
-  .notify-success{color:#00d97e;font-size:.85rem;margin-top:8px}
-
-  /* BUNDLE */
-  .bundle{background:linear-gradient(135deg,rgba(0,217,126,.08),rgba(0,153,255,.05));border:1px solid rgba(0,217,126,.2);border-radius:12px;padding:32px;margin-top:40px;text-align:center}
-  .bundle h3{color:#00d97e;margin-bottom:12px}
-
-  /* FOOTER */
-  footer{padding:40px 24px;text-align:center;color:#8b949e;font-size:.9rem;border-top:1px solid rgba(255,255,255,.06);margin-top:60px}
-  footer a{color:#c9d1d9;margin:0 8px}
-
-  @media(max-width:640px){
-    section{padding:40px 0}
-    .product-grid{grid-template-columns:1fr}
-    .nav{flex-direction:column;gap:12px}
-  }
-</style>
+<title>Marketplace — OutboundSolved</title>
+<meta name="description" content="Browse all 12+ digital products for B2B outreach. Cold email templates, LinkedIn scripts, sales call frameworks, and more. From $19.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;width:100%">
-    <a href="/" class="logo">Outbound<span>Solved</span></a>
-    <div>
+<!-- ===== NAV ===== -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="site-logo">Outbound<span>Solved</span></a>
+    <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/hub.html" style="color:#00d97e">Marketplace</a>
+      <a href="/hub.html" style="color:var(--accent)">Marketplace</a>
       <a href="https://calendly.com/outboundsolved/15min">Book a call</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ===== HERO ===== -->
+<header class="hero">
   <div class="container">
-    <h1>The Outbound Toolkit
-      <span class="accent">Digital products for B2B professionals across every outreach channel</span>
-    </h1>
-    <p class="lead" style="margin:0 auto">Templates, AI tools, and playbooks that help you reach the right people, in less time, with better results. Instant digital delivery. 30-day money-back guarantee.</p>
+    <h1>The marketplace</h1>
+    <p class="subhead">12+ digital products for B2B outreach. Pick what you need, pay once, download instantly. 30-day money-back guarantee.</p>
+  </div>
+</header>
+
+<!-- ===== COLD EMAIL ===== -->
+<section id="cold-email" class="tight">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">📧</div>
+      <h2 style="margin:0">Cold Email</h2>
+      <span class="muted" style="margin-left:auto">4 tools · $27-97</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="product-card featured">
+        <span class="badge badge-live">Live</span>
+        <h3>Cold Email Templates for B2B SaaS</h3>
+        <p class="desc">50 proven templates, 6 follow-up sequences, 30 subject line formulas, 25 AI customization prompts. Industry and role-specific variants included.</p>
+        <div class="price">$47 <small>one-time</small></div>
+        <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn">Get instant access →</a>
+      </div>
+
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>AI Cold Email Sequence Generator</h3>
+        <p class="desc">Enter your offer, get a custom 4-email sequence generated by AI. Personalized to your ICP, your tone, your value prop.</p>
+        <div class="price">$47 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'AI Cold Email Sequence Generator')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>100 Cold Emails That Got Replies</h3>
+        <p class="desc">Real cold emails (anonymized) that booked meetings. Categorized by industry, role, and use case.</p>
+        <div class="price">$37 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, '100 Cold Emails That Got Replies')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>Cold Email Deliverability Playbook</h3>
+        <p class="desc">SPF, DKIM, DMARC, warming up domains, inbox placement, avoiding spam folders.</p>
+        <div class="price">$37 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'Cold Email Deliverability Playbook')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== CATEGORY: COLD EMAIL ===== -->
-<section>
+<!-- ===== LINKEDIN ===== -->
+<section id="linkedin" class="tight" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">📧</div>
-        <div>
-          <h2 class="category-name">Cold Email</h2>
-          <p class="category-tagline">Templates, AI generators, and swipe files for cold outreach that gets replies.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <!-- Product 1: Cold Email Templates — LIVE -->
-        <div class="product-card featured">
-          <span class="badge badge-live">Live</span>
-          <h3>Cold Email Templates for B2B SaaS</h3>
-          <p class="description">50 proven cold email templates. 6 follow-up sequences. 30 subject line formulas. 25 AI customization prompts. Industry-specific + role-specific templates.</p>
-          <div class="price">$47 <small>one-time</small></div>
-          <a href="https://buy.stripe.com/6oUeVe1548en6S4bj96oo00" class="btn">Get instant access →</a>
-        </div>
-
-        <!-- Product 2: AI Cold Email Sequence Generator — COMING SOON -->
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>AI Cold Email Sequence Generator</h3>
-          <p class="description">Enter your offer, get a custom 4-email sequence generated by AI. Personalized to your ICP, your tone, your value prop. Tested frameworks, infinite variations.</p>
-          <div class="price">$47 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'AI Cold Email Sequence Generator')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-
-        <!-- Product 3: 100 Cold Emails That Got Replies — COMING SOON -->
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>100 Cold Emails That Got Replies</h3>
-          <p class="description">Real cold emails (anonymized) that booked meetings. Categorized by industry, role, and use case. See exactly what worked and why.</p>
-          <div class="price">$37 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, '100 Cold Emails That Got Replies')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-
-        <!-- Product 4: Cold Email Deliverability Guide — COMING SOON -->
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>Cold Email Deliverability Playbook</h3>
-          <p class="description">SPF, DKIM, DMARC, warming up domains, inbox placement, avoiding spam folders. The technical setup that makes or breaks your cold email.</p>
-          <div class="price">$37 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'Cold Email Deliverability Playbook')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-      </div>
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">💼</div>
+      <h2 style="margin:0">LinkedIn Outreach</h2>
+      <span class="muted" style="margin-left:auto">2 tools · $27-37</span>
     </div>
 
-    <!-- ===== CATEGORY: LINKEDIN ===== -->
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">💼</div>
-        <div>
-          <h2 class="category-name">LinkedIn Outreach</h2>
-          <p class="category-tagline">Connection requests, InMails, and engagement strategies for LinkedIn prospecting.</p>
-        </div>
+    <div class="grid grid-2">
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>LinkedIn Outreach Templates & Scripts</h3>
+        <p class="desc">100+ connection request templates, InMail scripts, follow-up messages. For SDRs, founders, freelancers.</p>
+        <div class="price">$37 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'LinkedIn Outreach Templates')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
       </div>
 
-      <div class="product-grid">
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>LinkedIn Outreach Templates & Scripts</h3>
-          <p class="description">100+ connection request templates, InMail scripts, follow-up messages, and engagement strategies. For SDRs, founders, freelancers, and anyone doing LinkedIn prospecting.</p>
-          <div class="price">$37 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'LinkedIn Outreach Templates')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>LinkedIn Profile Optimization Playbook</h3>
-          <p class="description">Turn your LinkedIn profile into a lead-gen machine. Headlines, about sections, featured posts, banner design. The complete playbook for profile optimization.</p>
-          <div class="price">$27 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'LinkedIn Profile Optimization')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>LinkedIn Profile Optimization Playbook</h3>
+        <p class="desc">Turn your profile into a lead-gen machine. Headlines, about sections, featured posts, banner design.</p>
+        <div class="price">$27 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'LinkedIn Profile Optimization')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
       </div>
     </div>
-
-    <!-- ===== CATEGORY: SALES CALLS ===== -->
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">📞</div>
-        <div>
-          <h2 class="category-name">Sales Calls</h2>
-          <p class="category-tagline">Cold call scripts, discovery frameworks, and objection handling for B2B sales teams.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>Cold Call Scripts for B2B Sales</h3>
-          <p class="description">50+ cold call openers, value propositions, qualifying questions, and voicemail scripts. For SDRs, AEs, and BDRs who want to book more meetings by phone.</p>
-          <div class="price">$37 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'Cold Call Scripts for B2B Sales')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>Objection Handling Playbook</h3>
-          <p class="description">The top 30 B2B sales objections (price, timing, trust, "we already have a vendor") and exactly how to handle each one. With email follow-up templates.</p>
-          <div class="price">$27 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'Objection Handling Playbook')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== CATEGORY: LEAD GENERATION ===== -->
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">🎯</div>
-        <div>
-          <h2 class="category-name">Lead Generation</h2>
-          <p class="category-tagline">Lead magnets, list-building tools, and enrichment workflows to fill your pipeline.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>Lead Magnet Templates Pack</h3>
-          <p class="description">20 proven lead magnet templates (PDFs, calculators, checklists, swipe files). For B2B founders and marketers who want to grow their email list.</p>
-          <div class="price">$27 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'Lead Magnet Templates Pack')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== CATEGORY: PR & MEDIA ===== -->
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">📰</div>
-        <div>
-          <h2 class="category-name">PR & Media</h2>
-          <p class="category-tagline">Pitch templates, journalist outreach, and press release formats for earned media.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>PR Pitch Templates for B2B</h3>
-          <p class="description">20 proven PR pitch templates for journalists, podcasts, and publications. Subject lines that get opened, body copy that gets responses, follow-up sequences.</p>
-          <div class="price">$37 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'PR Pitch Templates for B2B')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== CATEGORY: PARTNERSHIPS ===== -->
-    <div class="category">
-      <div class="category-header">
-        <div class="category-icon">🤝</div>
-        <div>
-          <h2 class="category-name">Partnerships</h2>
-          <p class="category-tagline">Affiliate outreach, co-marketing playbooks, and partnership proposal templates.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card coming-soon">
-          <span class="badge badge-soon">Coming soon</span>
-          <h3>Affiliate Outreach Playbook</h3>
-          <p class="description">How to find, pitch, and close affiliate partners. Templates for outreach, partnership proposals, and commission structures. Build a revenue stream without ads.</p>
-          <div class="price">$47 <small>one-time</small></div>
-          <form class="notify-form" onsubmit="return notifySubmit(event, 'Affiliate Outreach Playbook')">
-            <input type="email" name="email" placeholder="you@email.com" required>
-            <button type="submit">Notify me</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== BUNDLE UPSELL ===== -->
-    <div class="bundle">
-      <h3>📦 The Complete Outreach Bundle</h3>
-      <p style="max-width:500px;margin:0 auto 16px">Get all 11 products (current + coming soon) for one low price. Save 40% vs buying individually. Best for serious B2B professionals.</p>
-      <div style="font-size:2rem;font-weight:800;color:#00d97e;margin-bottom:8px">$197 <small style="font-size:1rem;color:#8b949e">vs $404 if bought separately</small></div>
-      <a href="https://calendly.com/outboundsolved/15min" class="btn">Get notified when the bundle launches →</a>
-    </div>
-
-    <!-- ===== REQUEST A PRODUCT ===== -->
-    <div style="text-align:center;margin-top:60px;padding:40px;background:rgba(255,255,255,.02);border-radius:12px">
-      <h3 style="margin-bottom:12px">Don't see what you need?</h3>
-      <p style="max-width:500px;margin:0 auto 16px;color:#8b949e">We build new products based on what B2B professionals actually need. Tell us what would help you, and we'll consider building it next.</p>
-      <a href="mailto:team@outboundsolved.com?subject=Product%20Request" class="btn btn-secondary">Request a product →</a>
-    </div>
-
   </div>
 </section>
 
-<footer>
-  <div>© 2026 OutboundSolved · The Outbound Toolkit for B2B Professionals</div>
-  <div style="margin-top:8px">
-    <a href="/">Home</a>·
-    <a href="/hub.html">Marketplace</a>·
-    <a href="mailto:team@outboundsolved.com">team@outboundsolved.com</a>
+<!-- ===== SALES CALLS ===== -->
+<section id="sales-calls" class="tight">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">📞</div>
+      <h2 style="margin:0">Sales Calls</h2>
+      <span class="muted" style="margin-left:auto">2 tools · $27-37</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>Cold Call Scripts for B2B Sales</h3>
+        <p class="desc">50+ cold call openers, value propositions, qualifying questions, voicemail scripts.</p>
+        <div class="price">$37 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'Cold Call Scripts for B2B Sales')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>Objection Handling Playbook</h3>
+        <p class="desc">Top 30 B2B sales objections and exactly how to handle each one. With email follow-up templates.</p>
+        <div class="price">$27 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'Objection Handling Playbook')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEAD GEN ===== -->
+<section id="lead-gen" class="tight" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">🎯</div>
+      <h2 style="margin:0">Lead Generation</h2>
+      <span class="muted" style="margin-left:auto">1 tool · $27</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>Lead Magnet Templates Pack</h3>
+        <p class="desc">20 proven lead magnet templates (PDFs, calculators, checklists). For B2B founders and marketers.</p>
+        <div class="price">$27 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'Lead Magnet Templates Pack')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PR & MEDIA ===== -->
+<section id="pr-media" class="tight">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">📰</div>
+      <h2 style="margin:0">PR & Media</h2>
+      <span class="muted" style="margin-left:auto">1 tool · $37</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>PR Pitch Templates for B2B</h3>
+        <p class="desc">20 proven PR pitch templates for journalists, podcasts, and publications.</p>
+        <div class="price">$37 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'PR Pitch Templates for B2B')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERSHIPS ===== -->
+<section id="partnerships" class="tight" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-6);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)">
+      <div style="font-size:2rem">🤝</div>
+      <h2 style="margin:0">Partnerships</h2>
+      <span class="muted" style="margin-left:auto">1 tool · $47</span>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="product-card coming-soon">
+        <span class="badge badge-soon">Coming soon</span>
+        <h3>Affiliate Outreach Playbook</h3>
+        <p class="desc">How to find, pitch, and close affiliate partners. Templates for outreach, proposals, commission structures.</p>
+        <div class="price">$47 <small>one-time</small></div>
+        <form onsubmit="return notifySubmit(event, 'Affiliate Outreach Playbook')" style="display:flex;gap:var(--sp-2)">
+          <input type="email" name="email" placeholder="you@email.com" required style="flex:1;padding:var(--sp-3);border:1px solid var(--border);background:var(--bg-primary);color:#fff;border-radius:var(--radius-md);font-size:var(--fs-sm);outline:none;font-family:inherit">
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUNDLE CTA ===== -->
+<section class="spacious">
+  <div class="container">
+    <div class="card featured" style="text-align:center;padding:var(--sp-12)">
+      <span class="badge badge-live" style="position:static;display:inline-block;margin-bottom:var(--sp-4)">Save 50%</span>
+      <h2 style="margin-bottom:var(--sp-4)">The Complete Outreach Bundle</h2>
+      <p class="lead" style="margin:0 auto var(--sp-6);max-width:520px">Get every tool, every category, forever. New tools added free. Best for serious B2B professionals doing outreach at scale.</p>
+      <div style="font-size:var(--fs-5xl);font-weight:800;color:var(--accent);margin-bottom:var(--sp-2);line-height:1">$197</div>
+      <p class="muted" style="margin-bottom:var(--sp-6)">vs $404 if bought individually</p>
+      <form onsubmit="return notifySubmit(event, 'Complete Outreach Bundle')" style="max-width:420px;margin:0 auto">
+        <div class="email-capture">
+          <input type="email" name="email" placeholder="Get notified when the bundle launches" required>
+          <button type="submit">Notify me →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="site-logo">Outbound<span>Solved</span></a>
+        <p class="footer-brand">The outbound toolkit for B2B professionals. 50+ templates and tools for cold email, LinkedIn, sales calls, and more.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/hub.html#cold-email">Cold Email</a></li>
+          <li><a href="/hub.html#linkedin">LinkedIn</a></li>
+          <li><a href="/hub.html#sales-calls">Sales Calls</a></li>
+          <li><a href="/hub.html#lead-gen">Lead Gen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/hub.html">Marketplace</a></li>
+          <li><a href="mailto:team@outboundsolved.com">Contact</a></li>
+          <li><a href="mailto:team@outboundsolved.com?subject=Product%20request">Request a tool</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://calendly.com/outboundsolved/15min">Book a call</a></li>
+          <li><a href="mailto:team@outboundsolved.com">team@outboundsolved.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 OutboundSolved · All rights reserved
+    </div>
   </div>
 </footer>
 
@@ -337,19 +292,13 @@ function notifySubmit(event, productName) {
   event.preventDefault();
   const form = event.target;
   const email = form.querySelector('input[type=email]').value;
-  const button = form.querySelector('button');
-  button.disabled = true;
-  button.textContent = 'Saving...';
-  // Send to Google Apps Script webhook (same as email capture)
+  const originalContent = form.innerHTML;
+  form.innerHTML = '<div style="color:var(--accent);padding:var(--sp-3);text-align:center">✓ You\'ll be notified when ' + productName + ' launches!</div>';
   fetch('https://script.google.com/macros/s/AKfycbzCBmFqAycGNq3jhSjIilJWE3Llrn7Vrp0nslq1x7Msiwl3mgPUlYboC7IH36vVfqKOCQ/exec', {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'email=' + encodeURIComponent(email) + '&product_interest=' + encodeURIComponent(productName)
-  }).then(() => {
-    form.innerHTML = '<div class="notify-success">✓ You\'ll be notified when ' + productName + ' launches!</div>';
-  }).catch(() => {
-    form.innerHTML = '<div class="notify-success">✓ You\'ll be notified!</div>';
   });
   return false;
 }
