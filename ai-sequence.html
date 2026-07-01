@@ -270,23 +270,52 @@ function handleSubmit(event) {
   window.location.href = stripeLink;
 }
 
-// On page load, check if user returned from successful payment
+// On page load, check for token OR post-payment state
 window.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get('paid');
   const storedForm = localStorage.getItem('seq_form');
+  const token = urlParams.get('token');
 
-  // Also check if we got redirected back from Stripe (success URL pattern)
+  // CASE 1: Returning customer with token (unlimited access)
+  if (token && !paymentStatus) {
+    // Pre-fill email field and show welcome back message
+    const formEl = document.getElementById('sequence-form');
+    if (formEl) {
+      const emailField = formEl.querySelector('input[name="email"]');
+      const submitBtn = formEl.querySelector('button[type="submit"]');
+
+      if (submitBtn) {
+        submitBtn.innerHTML = 'Generate unlimited sequence →';
+      }
+
+      // Add welcome banner above the form
+      const banner = document.createElement('div');
+      banner.style.cssText = 'background:linear-gradient(135deg,rgba(0,217,126,.15),rgba(0,217,126,.05));border:1px solid rgba(0,217,126,.3);border-radius:8px;padding:20px;margin-bottom:24px;text-align:center';
+      banner.innerHTML = '<div style="font-size:2rem;margin-bottom:8px">🔓</div><h3 style="margin:0 0 8px;color:var(--accent);font-size:18px">Welcome back!</h3><p style="margin:0;color:var(--text-secondary);font-size:14px">Your unlimited access is active. Generate as many sequences as you want.</p>';
+      formEl.parentNode.insertBefore(banner, formEl);
+
+      // Add hidden token field
+      const tokenInput = document.createElement('input');
+      tokenInput.type = 'hidden';
+      tokenInput.name = 'token';
+      tokenInput.value = token;
+      formEl.appendChild(tokenInput);
+    }
+  }
+
+  // CASE 2: Just paid, returning from Stripe (first-time customer)
   if ((paymentStatus === 'success' || window.location.href.includes('stripe-success')) && storedForm) {
     const formData = JSON.parse(storedForm);
     const formEl = document.getElementById('sequence-form');
 
     if (formEl) {
-      formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:3rem;margin-bottom:var(--sp-4)">⏳</div><h3 style="margin-bottom:var(--sp-3)">Generating your sequence...</h3><p style="color:var(--text-secondary)">This usually takes 30-60 seconds. We will email it to <strong>' + formData.email + '</strong></p></div>';
+      formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:3rem;margin-bottom:var(--sp-4)">⏳</div><h3 style="margin-bottom:var(--sp-3)">Generating your first sequence...</h3><p style="color:var(--text-secondary)">This usually takes 30-60 seconds. We will email it to <strong>' + formData.email + '</strong> along with your unlimited access link.</p></div>';
 
       // Submit form data to Apps Script
       const data = new URLSearchParams();
       Object.keys(formData).forEach(key => data.append(key, formData[key]));
+      data.append('action', 'generate');
 
       fetch('https://script.google.com/macros/s/AKfycbxGpPofOKGKcNDpHRx27guGvlXVNptOPBgikq-tqr1rYrm6gFgHDlGtl2oubOytAoh4FQ/exec', {
         method: 'POST',
@@ -295,7 +324,7 @@ window.addEventListener('DOMContentLoaded', function() {
         body: data.toString()
       }).then(() => {
         localStorage.removeItem('seq_form');
-        formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:4rem;margin-bottom:var(--sp-4);color:var(--accent)">✓</div><h3 style="margin-bottom:var(--sp-3);color:var(--accent)">Sequence generated!</h3><p style="color:var(--text-secondary);margin-bottom:var(--sp-5)">Check your inbox at <strong>' + formData.email + '</strong> for your custom 4-email cold outreach sequence.</p><p style="color:var(--text-tertiary);font-size:var(--fs-sm)">Did not see it? Check your spam folder. We will also save your inputs so you can regenerate anytime.</p></div>';
+        formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:4rem;margin-bottom:var(--sp-4);color:var(--accent)">✓</div><h3 style="margin-bottom:var(--sp-3);color:var(--accent)">Sequence generated!</h3><p style="color:var(--text-secondary);margin-bottom:var(--sp-5)">Check your inbox at <strong>' + formData.email + '</strong> for your custom 4-email cold outreach sequence AND your unlimited access link.</p><p style="color:var(--text-tertiary);font-size:var(--fs-sm)">Bookmark the access link in that email. Use it to generate unlimited sequences anytime.</p></div>';
       }).catch(() => {
         formEl.innerHTML = '<div style="text-align:center;padding:var(--sp-8)"><div style="font-size:3rem;margin-bottom:var(--sp-4)">⚠️</div><h3 style="margin-bottom:var(--sp-3)">Something went wrong</h3><p style="color:var(--text-secondary)">Please contact team@outboundsolved.com and we will send your sequence manually.</p></div>';
       });
